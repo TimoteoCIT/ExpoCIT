@@ -14,5 +14,6 @@
         TipoProyecto TipoProyecto { get; set; }
         Juez? Juez { get; set; }
         RPEI? RPEI { get; set; }
+        RTEEI? RTEEI { get; set; }
     }
 }
