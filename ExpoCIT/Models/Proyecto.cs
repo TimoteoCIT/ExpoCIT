@@ -13,5 +13,6 @@
         string Integrantes { get; set; }
         TipoProyecto TipoProyecto { get; set; }
         Juez? Juez { get; set; }
+        RPEI? RPEI { get; set; }
     }
 }
