@@ -9,8 +9,9 @@
     public class Proyecto : Auditable
     {
         string NumStand { get; set; }
-        string nombre { get; set; }
-        string integrantes { get; set; }
+        string Nombre { get; set; }
+        string Integrantes { get; set; }
         TipoProyecto TipoProyecto { get; set; }
+        Juez? Juez { get; set; }
     }
 }
