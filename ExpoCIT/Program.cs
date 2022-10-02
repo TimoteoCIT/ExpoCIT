@@ -1,7 +1,12 @@
+using ExpoCIT;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ExpoContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("EXPODB")));
 
 var app = builder.Build();
 
