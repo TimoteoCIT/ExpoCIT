@@ -1,6 +1,6 @@
 ﻿namespace ExpoCIT.Models
 {
-    enum TipoProyecto
+    public enum TipoProyecto
     {
         ExpoIngenieria,
         ExpoJovem
@@ -8,13 +8,12 @@
 
     public class Proyecto : Auditable
     {
-        string NumStand { get; set; }
-        string Nombre { get; set; }
-        string Integrantes { get; set; }
-        TipoProyecto TipoProyecto { get; set; }
-        Juez? Juez { get; set; }
-        RPEI? RPEI { get; set; }
-        RTEEI? RTEEI { get; set; }
-        RPEJ? RPEJ { get; set; }
+        public int Id { get; set; }
+
+        public string NumStand { get; set; }
+        public string Nombre { get; set; }
+        public string Integrantes { get; set; }
+        public TipoProyecto TipoProyecto { get; set; }
+        public Juez? Juez { get; set; }
     }
 }

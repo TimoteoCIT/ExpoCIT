@@ -5,20 +5,22 @@ namespace ExpoCIT.Models
 {
     public class Usuario : Auditable
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "Porfavor ingresar el username.")]
-        string Username { get; set; }
+        public string Username { get; set; }
 
         [Required(ErrorMessage = "Porfavor ingresar la contraseña.")]
         [Display(Name = "Contraseña")]
         [DataType(DataType.Password)]
-        string Contrasena { get; set; }
+        public string Contrasena { get; set; }
 
-        string Nombre { get; set; }
+        public string Nombre { get; set; }
 
         [Display(Name = "Primer Apellido")]
-        string PrimerApellido { get; set; }
+        public string PrimerApellido { get; set; }
 
         [Display(Name = "Segundo Apellido")]
-        string SegundoApellido { get; set; }
+        public string SegundoApellido { get; set; }
     }
 }

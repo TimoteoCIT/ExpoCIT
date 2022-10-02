@@ -2,25 +2,27 @@
 
 namespace ExpoCIT.Models
 {
-    class Juez : Auditable
+    public class Juez : Auditable
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "Porfavor ingresar la cedula.")]
         [RegularExpression(@"^[1-9]-\d{4}-\d{4}", ErrorMessage = "Formato de cedula debe ser x-xxxx-xxxx")]
-        string Cedula { get; set; }
+        public string Cedula { get; set; }
 
         [Required(ErrorMessage = "Porfavor ingresar la contraseña.")]
         [Display(Name = "Contraseña")]
         [DataType(DataType.Password)]
-        string Contrasena { get; set; }
+        public string Contrasena { get; set; }
 
-        string Nombre { get; set; }
+        public string Nombre { get; set; }
 
         [Display(Name = "Primer Apellido")]
-        string PrimerApellido { get; set; }
+        public string PrimerApellido { get; set; }
 
         [Display(Name = "Segundo Apellido")]
         string SegundoApellido { get; set; }
 
-        List<Proyecto> Proyectos { get; set; }
+        public List<Proyecto> Proyectos { get; set; }
     }
 }

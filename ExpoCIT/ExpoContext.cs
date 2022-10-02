@@ -7,6 +7,13 @@ namespace ExpoCIT
     {
         public ExpoContext(DbContextOptions<ExpoContext> options) : base (options) { }
 
+        DbSet<Juez> Jueces { get; set; }
+        DbSet<Proyecto> Proyectos { get; set; }
+        DbSet<RPEI> RPEIs { get; set; }
+        DbSet<RTEEI> RTEIs { get; set; }
+        DbSet<RPEJ> RTEJs { get; set; }
+        DbSet<Usuario> Usuarios { get; set; }
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var instertedEntries = this.ChangeTracker.Entries()
