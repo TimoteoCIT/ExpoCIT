@@ -15,5 +15,6 @@
         Juez? Juez { get; set; }
         RPEI? RPEI { get; set; }
         RTEEI? RTEEI { get; set; }
+        RPEJ? RPEJ { get; set; }
     }
 }
