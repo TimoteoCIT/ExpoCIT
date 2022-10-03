@@ -15,6 +15,7 @@ namespace ExpoCIT.Models
         [DataType(DataType.Password)]
         public string Contrasena { get; set; }
 
+        [Display(Name = "Nombre")]
         public string Nombre { get; set; }
 
         [Display(Name = "Primer Apellido")]

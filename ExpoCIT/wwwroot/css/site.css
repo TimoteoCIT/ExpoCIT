@@ -16,3 +16,17 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.Titulo {
+    background-color: #30bfa3;
+    color: white;
+    text-shadow: 1px 1px 3px #238c77;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.link:hover {
+    text-shadow: 1px 1px 3px #b8e9fc;
+}

@@ -4,16 +4,21 @@ using System.Diagnostics;
 
 namespace ExpoCIT.Controllers
 {
-    public class HomeController : Controller
+    public class UserController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<UserController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public UserController(ILogger<UserController> logger)
         {
             _logger = logger;
         }
 
         public IActionResult Login()
+        {
+            return View();
+
+        }
+        public IActionResult Usuario()
         {
             return View();
         }
@@ -22,10 +27,20 @@ namespace ExpoCIT.Controllers
         {
             return View();
         }
-        public IActionResult Proyectos()
+        public IActionResult Juez()
         {
             return View();
         }
+
+        public IActionResult RubricaProyecto()
+        {
+            return View();
+        }
+        public IActionResult RubricaTrabajoEscrito()
+        {
+            return View();
+        }
+
         public IActionResult Ganadores()
         {
             return View();
