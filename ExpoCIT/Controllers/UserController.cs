@@ -12,12 +12,6 @@ namespace ExpoCIT.Controllers
         {
             _logger = logger;
         }
-
-        public IActionResult Login()
-        {
-            return View();
-
-        }
         public IActionResult Usuario()
         {
             return View();
