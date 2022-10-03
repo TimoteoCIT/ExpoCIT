@@ -1,4 +1,4 @@
-﻿@model ExpoCIT.Models.Juez
+﻿@model List<Proyecto>
 
 @{
     ViewData["Title"] = "Index";
@@ -8,15 +8,15 @@
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="nameProyecto"></h5>
+        <h5 class="modal-title" id="nameProyecto">Nombre del Proyecto</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form method="post">
-          <div class="modal-body d-flex flex-column flex-md-row justify-content-center justify-content-md-around gap-5">
-                <input type="text" readonly class="form-control-plaintext d-none" id="idProyecto" asp-for="Id" value="">
-                <a class="btn btn-success btn-lg" id="FormProyecto" asp-action="BtnFormProyecto">Rubrica del Proyecto</a>
-                <a class="btn btn-success btn-lg" id="FormTrabajoEscrito" asp-action="BtnFormTrabajoEscrito">Rubrica del Trabajo Escrito</a>
-          </div>
+        <div class="modal-body d-flex flex-column flex-md-row justify-content-center justify-content-md-around gap-5">
+            <input type="text" readonly class="form-control-plaintext d-none" id="idProyecto" name="idProyecto" value="">
+            <a class="btn btn-success btn-lg" id="FormProyecto" asp-action="BtnFormProyecto">Rubrica del Proyecto</a>
+            <a class="btn btn-success btn-lg" id="FormTrabajoEscrito" asp-action="BtnFormTrabajoEscrito">Rubrica del Trabajo Escrito</a>
+        </div>
       </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -25,9 +25,9 @@
   </div>
 </div>
 
-<h2 class="m-3">Proyectos</h2>
+<h2 class="m-3">Proyectos de ExpoIngenería</h2>
 <div class="container-lg">
-    @foreach (var proyecto in Model.Proyectos)
+    @foreach (var proyecto in Model)
     {
         <div class="card my-4" style="border-radius: 10px;">
             <h4 class="card-header">@proyecto.Nombre - @proyecto.TipoProyecto</h4>
@@ -49,10 +49,6 @@ RubricasModal.addEventListener('show.bs.modal', function (event) {
     var button = event.relatedTarget;
     var id = button.getAttribute('data-bs-id');
     var name = button.getAttribute('data-bs-name');
-    var tipo = button.getAttribute('data-bs-tipo');
     RubricasModal.querySelector('.modal-body #idProyecto').value = id;
     RubricasModal.querySelector('.modal-header #nameProyecto').innerHTML = "Rubricas del proyecto " + name;
-    if(tipo == "ExpoJovem"){
-        document.getElementById("FormTrabajoEscrito").style.display = "none";
-    }
 </script>

@@ -8,17 +8,23 @@ namespace ExpoCIT.Controllers
         {
             return View();
         }
-        public IActionResult Usuario()
+
+        public IActionResult BtnFormProyecto(int idProyecto)
+        {
+            return FormProyecto(idProyecto);
+        }
+
+        public IActionResult BtnFormTrabajoEscrito(int idProyecto)
+        {
+            return FormTrabajoEscrito(idProyecto);
+        }
+
+        public IActionResult FormProyecto(int idProyecto)
         {
             return View();
         }
 
-        public IActionResult FormProyecto()
-        {
-            return View();
-        }
-
-        public IActionResult FormTrabajoEscrito()
+        public IActionResult FormTrabajoEscrito(int idProyecto)
         {
             return View();
         }

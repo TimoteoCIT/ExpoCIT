@@ -19,8 +19,10 @@ body {
 
 .Titulo {
     background-color: #30bfa3;
+    text-decoration: none;
     color: white;
     text-shadow: 1px 1px 3px #238c77;
+    box-shadow: #b1b0b0 2px 5px 5px;
 }
 
 .link{
@@ -29,4 +31,16 @@ body {
 
 .link:hover {
     text-shadow: 1px 1px 3px #b8e9fc;
+}
+
+#listaProductos {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: groove;
+    padding: 12px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 12px;
 }

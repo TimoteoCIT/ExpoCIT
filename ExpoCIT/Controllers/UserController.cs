@@ -12,25 +12,41 @@ namespace ExpoCIT.Controllers
         {
             _logger = logger;
         }
-        public IActionResult Usuario()
-        {
-            return View();
-        }
 
         public IActionResult Index()
         {
             return View();
         }
+
+        public IActionResult ProyectosEJ()
+        {
+            return View();
+        }
+        public IActionResult ProyectosEI()
+        {
+            return View();
+        }
+
+        public IActionResult BtnFormProyecto(int idProyecto)
+        {
+            return RubricaProyecto(idProyecto);
+        }
+
+        public IActionResult BtnFormTrabajoEscrito(int idProyecto)
+        {
+            return RubricaTrabajoEscrito(idProyecto);
+        }
+
         public IActionResult Juez()
         {
             return View();
         }
 
-        public IActionResult RubricaProyecto()
+        public IActionResult RubricaProyecto(int idProyecto)
         {
             return View();
         }
-        public IActionResult RubricaTrabajoEscrito()
+        public IActionResult RubricaTrabajoEscrito(int idProyecto)
         {
             return View();
         }
