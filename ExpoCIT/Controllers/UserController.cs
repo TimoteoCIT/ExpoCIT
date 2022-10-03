@@ -7,10 +7,12 @@ namespace ExpoCIT.Controllers
     public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;
+        private readonly ExpoContext _db;
 
-        public UserController(ILogger<UserController> logger)
+        public UserController(ILogger<UserController> logger, ExpoContext db)
         {
             _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
@@ -46,6 +48,7 @@ namespace ExpoCIT.Controllers
         {
             return View();
         }
+
         public IActionResult RubricaTrabajoEscrito(int idProyecto)
         {
             return View();

@@ -4,6 +4,15 @@ namespace ExpoCIT.Controllers
 {
     public class JuezController : Controller
     {
+        private readonly ILogger<JuezController> _logger;
+        private readonly ExpoContext _db;
+
+        public JuezController(ILogger<JuezController> logger, ExpoContext db)
+        {
+            _logger = logger;
+            _db = db;
+        }
+
         public IActionResult Index()
         {
             return View();
