@@ -1,41 +1,21 @@
-﻿using ExpoCIT.Models;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace ExpoCIT.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Login()
+        public ActionResult LoginJuez()
         {
             return View();
         }
-
-        public IActionResult Index()
+        public ActionResult LoginUser()
         {
             return View();
         }
-        public IActionResult Proyectos()
+        public IActionResult Usuario()
         {
             return View();
-        }
-        public IActionResult Ganadores()
-        {
-            return View();
-        }
-
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

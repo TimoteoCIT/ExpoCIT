@@ -1,0 +1,58 @@
+﻿@model ExpoCIT.Models.Juez
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Modal -->
+<div class="modal fade" id="RubricasModal" tabindex="-1" aria-labelledby="nameProyecto" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nameProyecto"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="post">
+          <div class="modal-body d-flex flex-column flex-md-row justify-content-center justify-content-md-around gap-5">
+                <input type="text" readonly class="form-control-plaintext d-none" id="idProyecto" asp-for="Id" value="">
+                <a class="btn btn-success btn-lg" id="FormProyecto" asp-action="BtnFormProyecto">Rubrica del Proyecto</a>
+                <a class="btn btn-success btn-lg" id="FormTrabajoEscrito" asp-action="BtnFormTrabajoEscrito">Rubrica del Trabajo Escrito</a>
+          </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="m-3">Proyectos</h2>
+<div class="container-lg">
+    @foreach (var proyecto in Model.Proyectos)
+    {
+        <div class="card my-4" style="border-radius: 10px;">
+            <h4 class="card-header">@proyecto.Nombre - @proyecto.TipoProyecto</h4>
+            <div class="card-body">
+                <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
+                <footer class="card-unit">
+                    <p>Integrantes:</p>
+                    @proyecto.Integrantes
+                </footer>
+                <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#RubricasModal" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto" >Ver Rubricas </button>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    var RubricasModal = document.getElementById('RubricasModal');
+RubricasModal.addEventListener('show.bs.modal', function (event) {
+    var button = event.relatedTarget;
+    var id = button.getAttribute('data-bs-id');
+    var name = button.getAttribute('data-bs-name');
+    var tipo = button.getAttribute('data-bs-tipo');
+    RubricasModal.querySelector('.modal-body #idProyecto').value = id;
+    RubricasModal.querySelector('.modal-header #nameProyecto').innerHTML = "Rubricas del proyecto " + name;
+    if(tipo == "ExpoJovem"){
+        document.getElementById("FormTrabajoEscrito").style.display = "none";
+    }
+</script>
