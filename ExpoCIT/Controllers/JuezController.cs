@@ -45,11 +45,39 @@ namespace ExpoCIT.Controllers
             return View("FormProyecto", rubricaProyecto);
         }
 
+        [HttpPost]
+        public IActionResult FormProyecto(RPEI rpei)
+        {
+            RPEI? dbRPEI = _db.RPEIs.Find(rpei.Id);
+
+            if (dbRPEI == null)
+                return View();
+
+            dbRPEI = rpei;
+
+            _db.SaveChanges();
+            return View("Index");
+        }
+
         public IActionResult FormTrabajoEscrito(int idProyecto)
         {
             var rubricaTrabajoEscrito = _db.RTEIs.Include(x => x.Proyecto).First(x => x.Proyecto.Id == idProyecto);
 
             return View("FormTrabajoEscrito", rubricaTrabajoEscrito);
+        }
+
+        [HttpPost]
+        public IActionResult FormTrabajoEscrito(RTEEI rteei)
+        {
+            RTEEI? dbRTEEI = _db.RTEIs.Find(rteei.Id);
+
+            if (dbRTEEI == null)
+                return View();
+
+            dbRTEEI = rteei;
+
+            _db.SaveChanges();
+            return View("Index");
         }
     }
 }
