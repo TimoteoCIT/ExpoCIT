@@ -40,7 +40,9 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormProyecto(int idProyecto)
         {
-            var rubricaProyecto = _db.RPEIs.Include(x => x.Proyecto).First(x => x.Proyecto.Id == idProyecto);
+            var rubricaProyecto = _db.RPEIs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
+            rubricaProyecto ??= new RPEI();
+            rubricaProyecto.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
             return View("FormProyecto", rubricaProyecto);
         }
@@ -62,6 +64,8 @@ namespace ExpoCIT.Controllers
         public IActionResult FormTrabajoEscrito(int idProyecto)
         {
             var rubricaTrabajoEscrito = _db.RTEIs.Include(x => x.Proyecto).First(x => x.Proyecto.Id == idProyecto);
+            rubricaTrabajoEscrito ??= new RTEEI();
+            rubricaTrabajoEscrito.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
             return View("FormTrabajoEscrito", rubricaTrabajoEscrito);
         }
