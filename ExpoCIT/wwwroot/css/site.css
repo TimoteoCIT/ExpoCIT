@@ -33,14 +33,13 @@ body {
     text-shadow: 1px 1px 3px #b8e9fc;
 }
 
-#listaProductos {
-    background-color: #f2f2f2;
+.imagenHeader {
+    width: 15%;
+    height: auto;
+}
+
+.formulario {
+    box-shadow: 0px 0px 8px 4px rgba(209,207,207,0.75);
+    background-color: #f7f7f7;
     border-radius: 10px;
-    border-width: 2px;
-    border-style: groove;
-    padding: 12px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 12px;
 }

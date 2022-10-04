@@ -96,7 +96,7 @@ namespace ExpoCIT.Controllers
             rubricaProyecto ??= new RPEJ();
             rubricaProyecto.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
-            return View("FormTrabajoEscrito", rubricaProyecto);
+            return View(rubricaProyecto);
         }
 
         [HttpPost]

@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "FormProyectoExpoJovem";
+}
+
+<div class="d-flex justify-content-evenly" style="max-height: 150px;">
+    <img class="my-2 imagenHeader" src="~/media/logoMep.webp"/>
+    <img class="my-2 imagenHeader" src="~/media/logoDetce.webp"/>
+    <img class="my-2 imagenHeader" src="~/media/logoExpoJovem.webp"/>
+    <img class="my-2 imagenHeader" src="~/media/logoInfocoop.webp"/>
+</div>
+<div class=" mt-5 p-4 container-lg formulario">
+    <h2 class="mb-5">Evaluación de proyectos Expojovem</h2>
+    <form>
+        <div class="container">
+            <div class="row my-2">
+                <div class="col-md-auto">
+                    Institución
+                </div>
+                <div class="col-md">
+                    <input class="form-control" type="text" placeholder="Escribe aquí">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-auto">
+                    Nombre del Proyecto
+                </div>
+                <div class="col-md">
+                    <input class="form-control" type="text" placeholder="Escribe aquí">
+                </div>
+                <div class="col-md-auto">
+                    Proyecto Nº
+                </div>
+                <div class="col-md">
+                    <input class="form-control" type="number" min="0" placeholder="Escribe aquí">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-auto">
+                    Expositores
+                </div>
+                <div class="col-md">
+                    <input class="form-control" type="text" placeholder="Escribe aquí">
+                    <input class="form-control" type="text" placeholder="Escribe aquí">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-auto">
+                    Tutor
+                </div>
+                <div class="col-md">
+                    <input class="form-control" type="text" placeholder="Escribe aquí">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-auto">
+                    Nombre del juez
+                </div>
+                <div class="col-md">
+                    <input class="form-control" type="text" placeholder="Escribe aquí">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-auto">
+                    Número de cédula del juez
+                </div>
+                <div class="col-md">
+                    <input class="form-control" id="cedula" type="text" placeholder="Escribe aquí">
+                </div>
+                <div class="col-md-auto">
+                    Firma del juez
+                </div>
+                <div class="col-md">
+                    @*AQUI VA LA FIRMA DEL JUEZ*@
+                    <input class="form-control" type="text" placeholder="Escribe aquí">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-auto">
+                    Fecha de la evaluación
+                </div>
+                <div class="col-md">
+                    <input class="form-control" type="date" placeholder="Escribe aquí">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-md-auto">
+                    Digitado por
+                </div>
+                <div class="col-md">
+                    <input class="form-control" type="text" placeholder="Escribe aquí">
+                    <input class="form-control" type="text" placeholder="Escribe aquí">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
