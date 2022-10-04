@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -21,7 +22,7 @@
             @if (User.Identity.IsAuthenticated)
             {
                 <a class="nav-link active text-light" asp-controller="Home" asp-action="Usuario">
-                    <h2>@User.Identity.Name
+                    <h2>@User.Claims.First(x => x.Type == ClaimTypes.GivenName).Value
                     <i class="bi bi-person-circle"></i></h2>
                 </a>
             }
