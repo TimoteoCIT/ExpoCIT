@@ -21,7 +21,7 @@ namespace ExpoCIT.Models
         public string PrimerApellido { get; set; }
 
         [Display(Name = "Segundo Apellido")]
-        string SegundoApellido { get; set; }
+        public string SegundoApellido { get; set; }
 
         public List<Proyecto> Proyectos { get; set; }
     }
