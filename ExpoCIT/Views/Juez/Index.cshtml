@@ -11,11 +11,12 @@
         <h5 class="modal-title" id="nameProyecto"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form method="post">
+      <form asp-action="VerRubrica" method="post">
           <div class="modal-body d-flex flex-column flex-md-row justify-content-center justify-content-md-around gap-5">
-                <input type="text" readonly class="form-control-plaintext d-none" id="idProyecto" asp-for="Id" value="">
-                <a class="btn btn-success btn-lg" id="FormProyecto" asp-action="BtnFormProyecto">Rubrica del Proyecto</a>
-                <a class="btn btn-success btn-lg" id="FormTrabajoEscrito" asp-action="BtnFormTrabajoEscrito">Rubrica del Trabajo Escrito</a>
+                <input type="text" readonly class="form-control-plaintext d-none" id="idProyecto" name="idProyecto">
+                <button class="btn btn-success btn-lg" id="FormProyecto" name="btnPresionado" value="@TipoRubrica.ProyectoExpoIngenieria">Rubrica del Proyecto</button>
+                <button class="btn btn-success btn-lg" id="FormTrabajoEscrito" name="btnPresionado" value="@TipoRubrica.TrabajoEscritoExpoIngenieria">Rubrica del Trabajo Escrito</button>
+                <button class="btn btn-success btn-lg" id="FormProyectoExpoJovem" name="btnPresionado" value="@TipoRubrica.ProyectoExpoJovem">Rubrica Expo Jovem</button>
           </div>
       </form>
       <div class="modal-footer">
