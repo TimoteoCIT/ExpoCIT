@@ -7,12 +7,12 @@ namespace ExpoCIT
     {
         public ExpoContext(DbContextOptions<ExpoContext> options) : base (options) { }
 
-        DbSet<Juez> Jueces { get; set; }
-        DbSet<Proyecto> Proyectos { get; set; }
-        DbSet<RPEI> RPEIs { get; set; }
-        DbSet<RTEEI> RTEIs { get; set; }
-        DbSet<RPEJ> RTEJs { get; set; }
-        DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Juez> Jueces { get; set; }
+        public DbSet<Proyecto> Proyectos { get; set; }
+        public DbSet<RPEI> RPEIs { get; set; }
+        public DbSet<RTEEI> RTEIs { get; set; }
+        public DbSet<RPEJ> RTEJs { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

@@ -27,19 +27,23 @@
 
 <h2 class="m-3">Proyectos</h2>
 <div class="container-lg">
-    @foreach (var proyecto in Model.Proyectos)
-    {
-        <div class="card my-4" style="border-radius: 10px;">
-            <h4 class="card-header">@proyecto.Nombre - @proyecto.TipoProyecto</h4>
-            <div class="card-body">
-                <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
-                <footer class="card-unit">
-                    <p>Integrantes:</p>
-                    @proyecto.Integrantes
-                </footer>
-                <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#RubricasModal" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto" >Ver Rubricas </button>
+    @if (Model.Proyectos != null) {
+        @foreach (var proyecto in Model.Proyectos)
+        {
+            <div class="card my-4" style="border-radius: 10px;">
+                <h4 class="card-header">@proyecto.Nombre - @proyecto.TipoProyecto</h4>
+                <div class="card-body">
+                    <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
+                    <footer class="card-unit">
+                        <p>Integrantes:</p>
+                        @proyecto.Integrantes
+                    </footer>
+                    <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#RubricasModal" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
+                </div>
             </div>
-        </div>
+        }
+    } else {
+        <h1 style="color: red">No tiene ningun proyecto asignado</h1>
     }
 </div>
 
