@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ExpoCIT.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace ExpoCIT.Controllers
 {
@@ -15,7 +18,14 @@ namespace ExpoCIT.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var claims = User.Identities.First().Claims.ToList();
+
+            int id;
+            int.TryParse(claims?.FirstOrDefault(x => x.Type == "Id")?.Value, out id);
+
+            var juez = _db.Jueces.Include(x => x.Proyectos).First(x => x.Id == id);
+
+            return View(juez);
         }
 
         public IActionResult BtnFormProyecto(int idProyecto)
@@ -30,12 +40,16 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormProyecto(int idProyecto)
         {
-            return View();
+            var rubricaProyecto = _db.RPEIs.Include(x => x.Proyecto).First(x => x.Proyecto.Id == idProyecto);
+
+            return View("FormProyecto", rubricaProyecto);
         }
 
         public IActionResult FormTrabajoEscrito(int idProyecto)
         {
-            return View();
+            var rubricaTrabajoEscrito = _db.RTEIs.Include(x => x.Proyecto).First(x => x.Proyecto.Id == idProyecto);
+
+            return View("FormTrabajoEscrito", rubricaTrabajoEscrito);
         }
     }
 }
