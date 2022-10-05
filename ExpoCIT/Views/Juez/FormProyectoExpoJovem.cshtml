@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row my-2">
                 <div class="col-md-auto">
-                    Institución
+                    <h5>Institución</h5>
                 </div>
                 <div class="col-md">
                     <input class="form-control" type="text" placeholder="Escribe aquí">
@@ -22,13 +22,13 @@
             </div>
             <div class="row my-2">
                 <div class="col-md-auto">
-                    Nombre del Proyecto
+                    <h5>Nombre del Proyecto</h5>
                 </div>
                 <div class="col-md">
                     <input class="form-control" type="text" placeholder="Escribe aquí">
                 </div>
                 <div class="col-md-auto">
-                    Proyecto Nº
+                    <h5>Proyecto Nº</h5>
                 </div>
                 <div class="col-md">
                     <input class="form-control" type="number" min="0" placeholder="Escribe aquí">
@@ -36,7 +36,7 @@
             </div>
             <div class="row my-2">
                 <div class="col-md-auto">
-                    Expositores
+                    <h5>Expositores</h5>
                 </div>
                 <div class="col-md">
                     <input class="form-control" type="text" placeholder="Escribe aquí">
@@ -45,7 +45,7 @@
             </div>
             <div class="row my-2">
                 <div class="col-md-auto">
-                    Tutor
+                    <h5>Tutor</h5>
                 </div>
                 <div class="col-md">
                     <input class="form-control" type="text" placeholder="Escribe aquí">
@@ -53,7 +53,7 @@
             </div>
             <div class="row my-2">
                 <div class="col-md-auto">
-                    Nombre del juez
+                    <h5>Nombre del juez</h5>
                 </div>
                 <div class="col-md">
                     <input class="form-control" type="text" placeholder="Escribe aquí">
@@ -61,13 +61,13 @@
             </div>
             <div class="row my-2">
                 <div class="col-md-auto">
-                    Número de cédula del juez
+                    <h5>Número de cédula del juez</h5>
                 </div>
                 <div class="col-md">
                     <input class="form-control" id="cedula" type="text" placeholder="Escribe aquí">
                 </div>
                 <div class="col-md-auto">
-                    Firma del juez
+                    <h5>Firma del juez</h5>
                 </div>
                 <div class="col-md">
                     @*AQUI VA LA FIRMA DEL JUEZ*@
@@ -76,7 +76,7 @@
             </div>
             <div class="row my-2">
                 <div class="col-md-auto">
-                    Fecha de la evaluación
+                    <h5>Fecha de la evaluación</h5>
                 </div>
                 <div class="col-md">
                     <input class="form-control" type="date" placeholder="Escribe aquí">
@@ -84,11 +84,1211 @@
             </div>
             <div class="row my-2">
                 <div class="col-md-auto">
-                    Digitado por
+                    <h5>Digitado por</h5>
                 </div>
                 <div class="col-md">
                     <input class="form-control" type="text" placeholder="Escribe aquí">
                     <input class="form-control" type="text" placeholder="Escribe aquí">
+                </div>
+            </div>
+        </div>
+        <h2 class="mt-5 mb-3">Escala de calificación</h2>
+        <h5>NE: No se evidencia | 1: Muy malo | 2: Malo | 3: Regular | 4: Bueno | 5: Muy Bueno</h5>
+        <h2 class="mt-5 mb-3">Calificación del Proyecto</h2>
+        <div class="container tabla">
+            <div class="row">
+                <div class="col-md py-2">
+                    <h3><b>Criterio: Innovación e Impacto</b></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h4>Indicadores</h4>
+                </div>
+                <div class="col-md-4 py-2 tabla">
+                    <h4>Calificación</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>1.	PROPUESTA NUEVA O RENOVADA:</b> El producto o servicio se muestra como una propuesta nueva o renovada del mercado en el que participa.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>2.   MÉTODOS DE PRODUCCIÓN:</b> Los métodos de producción presentados se muestran novedosos comparados con lo que hay en el área de acción del proyecto.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>3.   COMERCIALIZACIÓN:</b> Las formas de comercializar los productos o servicios son creativas e impactan positivamente su estancia en el mercado.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>4.	PROPUESTA ADMINISTRATIVA:</b> La gestión y la organización del trabajo propone una reforma a lo que se conoce en la actualidad.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>5.	DIFERENCIACIÓN:</b> La idea en su totalidad se acompaña de un componente de creatividad y/o innovación que la hace ver diferente a otros proyectos.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            @*--------------------------------------------------------------------------------------------------------------------------*@
+            <div class="row">
+                <div class="col-md py-2">
+                    <h3><b>Criterio: Modelo de Negocio (CANVAS)</b></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h4>Indicadores</h4>
+                </div>
+                <div class="col-md-4 py-2 tabla">
+                    <h4>Calificación</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>6.	PROPUESTA DE VALOR:</b> Establece la diferenciación de su producto (bien o servicio) señalando el valor implícito y beneficios específicos del mismo, para atender a un conjunto de necesidades y deseos de la demanda.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>7.	SEGMENTO DE CLIENTES:</b> Establece el(los) segmento(s) de clientes a quienes estará enfocado su negocio, describiendo en detalle  el perfil de los clientes del grupo meta.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>8.	RELACIÓN CON CLIENTES Y CANALES:</b> Especifica las características del tipo de relación que quiere mantener con sus clientes, puntualizando los canales mediante los cuales dará a conocer y hará llegar su propuesta de valor a los clientes.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>9.	ACTIVIDADES Y RECURSOS CLAVE:</b> Puntualiza y describe las actividades y recursos necesarios para la producción y distribución del bien o prestación del servicio.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>10.	ALIANZAS CLAVE:</b> Identifica los proveedores, socios estratégicos e instituciones de apoyo necesarios para desarrollar, potenciar y mejorar el modelo de negocio propuesto.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>11.	ESTRUCTURA DE COSTOS E INGRESOS:</b> Resume los costos más importantes involucrados en su modelo de negocio y necesarios para crear su propuesta de valor, así como el flujo de dinero que se recibirá por la venta de bienes o prestación del servicio.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            @*--------------------------------------------------------------------------------------------------------------------------*@
+            <div class="row">
+                <div class="col-md py-2">
+                    <h3><b>Criterio: Plan de Mercado</b></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h4>Indicadores</h4>
+                </div>
+                <div class="col-md-4 py-2 tabla">
+                    <h4>Calificación</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>12.	DESCRIPCIÓN DE PRODUCTO:</b> Se hace una descripción pormenorizada del bien o servicio, especificando sus características.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>13.	JUSTIFICACIÓN DE LA DEMANDA:</b> Justifica con datos reales la demanda del mercado, utilizando para ello encuestas o estudios  publicados sobre la actividad; determina un segmento de mercado y caracteriza a su consumidor.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>14.	COMPETENCIA:</b> Hace un análisis de las fortalezas y debilidades de la competencia en comparación con su propuesta y la forma de poder aprovecharlas; determina por medio de datos concretos las cantidades de producto que se ofrecen en el mercado.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>15.	PROMOCIÓN, COMERCIALIZACIÓN Y DISTRIBUCIÓN:</b> Presenta un programa de promoción y publicidad, y establece un costo que se refleja en el análisis financiero. Definición de las formas en que se venderá el bien o servicio (¿quién lo venderá, dónde se venderá?).</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>16.	 PRECIO:</b> Establece un precio para el bien o servicio, y su comportamiento en las diferentes épocas del año; describe claramente la forma en que fue fijado a partir de los factores considerados para tal fin.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            @*--------------------------------------------------------------------------------------------------------------------------*@
+            <div class="row">
+                <div class="col-md py-2">
+                    <h3><b>Criterio: Análisis Técnico</b></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h4>Indicadores</h4>
+                </div>
+                <div class="col-md-4 py-2 tabla">
+                    <h4>Calificación</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>17.	PROCESOS:</b> Nivel de descripción de los procedimientos a seguir para producir el bien o facilitar el servicio.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>18.	PRODUCCIÓN:</b> Nivel de determinación de las cantidades a producir del bien o a prestar del servicio (por mes, por año, etc.)</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>19.	PROVEEDURÍA:</b> Nivel de determinación de los proveedores y de las cantidades de insumos necesarias para producir y comercializar el bien o servicio.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>20.	RECURSOS:</b> Nivel de definición de los recursos requeridos para el proyecto (edificios, maquinaria, equipo, mobiliario, humanos, materia prima, etc.).</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>21.	PERSONAL:</b> Nivel de definición de la cantidad de personal que requiere el proyecto y las características del mismo.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>22.	ORGANIZACIÓN:</b> Nivel de definición de puestos, departamentos o unidades que se requieren para la operación administrativa y productiva del proyecto.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            @*--------------------------------------------------------------------------------------------------------------------------*@
+            <div class="row">
+                <div class="col-md py-2">
+                    <h3><b>Criterio: Análisis Económico y Financiero</b></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h4>Indicadores</h4>
+                </div>
+                <div class="col-md-4 py-2 tabla">
+                    <h4>Calificación</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>23.	 INGRESOS:</b> Describe y fundamenta de manera mensual y anual cuáles serían los ingresos del proyecto.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>24.	 COSTOS Y GASTOS:</b> Describe detalladamente con precio y cantidades cuáles serían los egresos del proyecto.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>25.	 FINANCIAMIENTO:</b> Determina la forma en la cual será financiada la propuesta, ya sea con recursos propios o entidades financieras, y lo refleja en su flujo de caja.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>26.	 INDICADORES FINANCIEROS:</b> Presentación de indicadores financieros (al menos Relación Beneficio Costo [B/C]) a partir del flujo de caja proyectado y supuestos debidamente establecidos.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>27.	 RENTABILIDAD:</b> Muestra aspectos de impacto económico a nivel regional o nacional, generando ingresos para los proponentes que justifique la inversión tanto en valores absolutos como relativos.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            @*--------------------------------------------------------------------------------------------------------------------------*@
+            <div class="row">
+                <div class="col-md py-2">
+                    <h3><b>Criterio: Atención al Cliente</b></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h4>Indicadores</h4>
+                </div>
+                <div class="col-md-4 py-2 tabla">
+                    <h4>Calificación</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>28.</b> Trato amable, respetuoso y cortés a los visitantes, diferenciado y propio de la propuesta de negocios.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>29.</b> Se permite la accesibilidad al producto y a la información, brindando material técnico, promocional y de contacto pertinente y de calidad.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>30.</b> Atentos  a la llegada y atención del público, se presentan de forma natural y oportuna, a la vez que procuran conocer e identificar al visitante.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>31.</b> Muestran el producto con agrado, esmero y entusiasmo (actitud positiva), demostrando un claro dominio de la temática y su evidente participación en la preparación del proyecto. además reciben las recomendaciones de forma proactiva y respetuosa.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            @*--------------------------------------------------------------------------------------------------------------------------*@
+            <div class="row">
+                <div class="col-md py-2">
+                    <h3><b>Criterio: Espíritu Emprendedor</b></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h4>Indicadores</h4>
+                </div>
+                <div class="col-md-4 py-2 tabla">
+                    <h4>Calificación</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>32.</b> Manifiesta necesidad de logro,  independencia y de construcción de la propuesta, así como interés, gusto y pasión por lo que hace.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>33.</b> Manifiesta confianza y optimismo en sus capacidades y posibilidades de éxito, a la vez que considera y calcula factores de riesgo, e imagina, genera y propone ideas y soluciones originales, creativas y fundamentadas.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>34.</b> Manifiesta una visión clara de su proyecto, apoyada por ideas concretas, logrando evidenciar una capacidad de persuasión que se basa en su motivación, impulso, preparación (conocimiento) y habilidad.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5><b>35.</b> Alta capacidad de comunicación, y disposición a recibir y solicitar consejo o ayuda, por lo que reacciona con tolerancia, flexibilidad y respeto hacia las ideas y puntos de vista de otros.</h5>
+                </div>
+                <div class="col-md-4 py-2 tabla d-flex justify-content-around align-items-center">
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
+                      <label class="form-check-label" for="RadioNE">NE</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
+                      <label class="form-check-label" for="Radio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
+                      <label class="form-check-label" for="Radio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
+                      <label class="form-check-label" for="Radio1">3</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
+                      <label class="form-check-label" for="Radio2">4</label>
+                    </div>
+                    <div class="form-check form-check-inline rdbLetras">
+                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
+                      <label class="form-check-label" for="Radio1">5</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    <h5 style="text-align: center;">Observaciones Generales</h5>
+                    <textarea class="form-control" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md py-2 tabla">
+                    @*AQUI VA LA FIRMA DEL JUEZ*@
+                    <input class="form-control" type="text" placeholder="Escribe aquí">
+                    <h5 style="text-align: center;">Firma del juez</h5>
                 </div>
             </div>
         </div>

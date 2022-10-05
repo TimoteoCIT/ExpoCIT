@@ -43,3 +43,11 @@ body {
     background-color: #f7f7f7;
     border-radius: 10px;
 }
+
+.tabla{
+    border: solid 1px black;
+}
+
+.rdbLetras {
+    font-size: larger;
+}
