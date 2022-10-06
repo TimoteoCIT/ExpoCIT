@@ -29,16 +29,16 @@ namespace ExpoCIT.Controllers
         }
 
         [HttpPost]
-        public IActionResult VerRubrica(TipoRubrica btnPresionado)
+        public IActionResult VerRubrica(int idProyecto, TipoRubrica btnPresionado)
         {
             switch (btnPresionado)
             {
                 case TipoRubrica.ProyectoExpoIngenieria:
-                    return RedirectToAction("FormProyectoExpoIngenieria");
+                    return RedirectToAction("FormProyectoExpoIngenieria", new { idProyecto = idProyecto});
                 case TipoRubrica.TrabajoEscritoExpoIngenieria:
-                    return RedirectToAction("FormTrabajoEscritoExpoIngenieria");
+                    return RedirectToAction("FormTrabajoEscritoExpoIngenieria", new { idProyecto = idProyecto });
                 case TipoRubrica.ProyectoExpoJovem:
-                    return RedirectToAction("FormProyectoExpoJovem");
+                    return RedirectToAction("FormProyectoExpoJovem", new { idProyecto = idProyecto });
                 default:
                     return RedirectToAction("Index");
             }
@@ -96,7 +96,7 @@ namespace ExpoCIT.Controllers
             rubricaProyecto ??= new RPEJ();
             rubricaProyecto.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
-            return View("FormTrabajoEscrito", rubricaProyecto);
+            return View(rubricaProyecto);
         }
 
         [HttpPost]
