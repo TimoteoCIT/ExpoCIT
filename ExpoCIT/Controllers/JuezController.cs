@@ -28,17 +28,23 @@ namespace ExpoCIT.Controllers
             return View(juez);
         }
 
-        public IActionResult BtnFormProyecto(int idProyecto)
+        [HttpPost]
+        public IActionResult VerRubrica(TipoRubrica btnPresionado)
         {
-            return FormProyecto(idProyecto);
+            switch (btnPresionado)
+            {
+                case TipoRubrica.ProyectoExpoIngenieria:
+                    return RedirectToAction("FormProyectoExpoIngenieria");
+                case TipoRubrica.TrabajoEscritoExpoIngenieria:
+                    return RedirectToAction("FormTrabajoEscritoExpoIngenieria");
+                case TipoRubrica.ProyectoExpoJovem:
+                    return RedirectToAction("FormProyectoExpoJovem");
+                default:
+                    return RedirectToAction("Index");
+            }
         }
 
-        public IActionResult BtnFormTrabajoEscrito(int idProyecto)
-        {
-            return FormTrabajoEscrito(idProyecto);
-        }
-
-        public IActionResult FormProyecto(int idProyecto)
+        public IActionResult FormProyectoExpoIngenieria(int idProyecto)
         {
             var rubricaProyecto = _db.RPEIs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaProyecto ??= new RPEI();
@@ -48,7 +54,7 @@ namespace ExpoCIT.Controllers
         }
 
         [HttpPost]
-        public IActionResult FormProyecto(RPEI rpei)
+        public IActionResult FormProyectoExpoIngenieria(RPEI rpei)
         {
             RPEI? dbRPEI = _db.RPEIs.Find(rpei.Id);
 
@@ -61,9 +67,9 @@ namespace ExpoCIT.Controllers
             return View("Index");
         }
 
-        public IActionResult FormTrabajoEscrito(int idProyecto)
+        public IActionResult FormTrabajoEscritoExpoIngenieria(int idProyecto)
         {
-            var rubricaTrabajoEscrito = _db.RTEIs.Include(x => x.Proyecto).First(x => x.Proyecto.Id == idProyecto);
+            var rubricaTrabajoEscrito = _db.RTEIs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaTrabajoEscrito ??= new RTEEI();
             rubricaTrabajoEscrito.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
@@ -71,7 +77,7 @@ namespace ExpoCIT.Controllers
         }
 
         [HttpPost]
-        public IActionResult FormTrabajoEscrito(RTEEI rteei)
+        public IActionResult FormTrabajoEscritoExpoIngenieria(RTEEI rteei)
         {
             RTEEI? dbRTEEI = _db.RTEIs.Find(rteei.Id);
 
@@ -79,6 +85,29 @@ namespace ExpoCIT.Controllers
                 return View();
 
             dbRTEEI = rteei;
+
+            _db.SaveChanges();
+            return View("Index");
+        }
+
+        public IActionResult FormProyectoExpoJovem(int idProyecto)
+        {
+            var rubricaProyecto = _db.RTEJs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
+            rubricaProyecto ??= new RPEJ();
+            rubricaProyecto.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
+
+            return View("FormTrabajoEscrito", rubricaProyecto);
+        }
+
+        [HttpPost]
+        public IActionResult FormProyectoExpoJovem(RPEJ rpej)
+        {
+            RPEJ? dbRPEJ = _db.RTEJs.Find(rpej.Id);
+
+            if (dbRPEJ == null)
+                return View();
+
+            dbRPEJ = rpej;
 
             _db.SaveChanges();
             return View("Index");
