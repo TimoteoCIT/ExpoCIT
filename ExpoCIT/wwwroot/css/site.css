@@ -51,3 +51,8 @@ body {
 .rdbLetras {
     font-size: larger;
 }
+
+.tituloTabla {
+    background-color: #30bfa3;
+    color: white;
+}
