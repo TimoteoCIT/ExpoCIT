@@ -1,9 +1,11 @@
 ﻿using ExpoCIT.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace ExpoCIT.Controllers
 {
+    [Authorize(Policy = "UserOnly")]
     public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;
@@ -40,6 +42,11 @@ namespace ExpoCIT.Controllers
         }
 
         public IActionResult Juez()
+        {
+            return View();
+        }
+
+        public IActionResult RubricaProyectoExpoJovem(int idProyecto)
         {
             return View();
         }

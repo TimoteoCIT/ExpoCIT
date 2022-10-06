@@ -62,7 +62,7 @@ namespace ExpoCIT.Controllers
 
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.GivenName, usuario.Nombre),
+                new Claim(ClaimTypes.GivenName, dbUsuario.Nombre),
                 new Claim(ClaimTypes.Surname, $"{dbUsuario.PrimerApellido} {dbUsuario.SegundoApellido}"),
                 new Claim(ClaimTypes.Name, $"{dbUsuario.Nombre} {dbUsuario.PrimerApellido} {dbUsuario.SegundoApellido}"),
                 new Claim("Id", dbUsuario.Id.ToString()),
@@ -74,6 +74,18 @@ namespace ExpoCIT.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
             return RedirectToAction("Index", "User");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("LoginJuez");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
 
         public IActionResult Usuario()
