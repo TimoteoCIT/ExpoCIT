@@ -59,10 +59,10 @@ namespace ExpoCIT.Controllers
             {
                 return View();
             }
-
+            
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.GivenName, usuario.Nombre),
+                new Claim(ClaimTypes.GivenName, dbUsuario.Nombre),
                 new Claim(ClaimTypes.Surname, $"{dbUsuario.PrimerApellido} {dbUsuario.SegundoApellido}"),
                 new Claim(ClaimTypes.Name, $"{dbUsuario.Nombre} {dbUsuario.PrimerApellido} {dbUsuario.SegundoApellido}"),
                 new Claim("Id", dbUsuario.Id.ToString()),
