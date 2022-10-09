@@ -46,7 +46,7 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormProyectoExpoIngenieria(int idProyecto)
         {
-            var rubricaProyecto = _db.RPEIs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
+            var rubricaProyecto = _db.RPEIs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaProyecto ??= new RPEI();
             rubricaProyecto.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
