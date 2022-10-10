@@ -1,6 +1,7 @@
 ﻿using ExpoCIT.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Claims;
 
 namespace ExpoCIT.Controllers
@@ -59,8 +60,6 @@ namespace ExpoCIT.Controllers
         [HttpPost]
         public IActionResult FormProyectoExpoIngenieria(RPEI rpei, int idProyecto, string firma)
         {
-            var dbRPEI = _db.RPEIs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
-            dbRPEI ??= new RPEI();
             rpei.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
             rpei.I_subtotal = rpei.I_a + rpei.I_b + rpei.I_c + rpei.I_d + rpei.I_e;
@@ -78,10 +77,12 @@ namespace ExpoCIT.Controllers
             var decodedImage = Convert.FromBase64String(encodedImage);
             rpei.FirmaDigital = decodedImage;
 
-            dbRPEI = rpei;
-            if (dbRPEI.Id == 0)
+            if (rpei.Id == 0)
             {
-                _db.RPEIs.Add(dbRPEI);
+                _db.RPEIs.Add(rpei);
+            } else
+            {
+                _db.Update(rpei);
             }
 
             _db.SaveChanges();
@@ -103,8 +104,6 @@ namespace ExpoCIT.Controllers
         [HttpPost]
         public IActionResult FormTrabajoEscritoExpoIngenieria(RTEEI rteei, int idProyecto, string firma)
         {
-            RTEEI? dbRTEEI = _db.RTEIs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
-            dbRTEEI ??= new RTEEI();
             rteei.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
             rteei.I_subtotal = rteei.I_a + rteei.I_b + rteei.I_c + rteei.I_d + rteei.I_e;
@@ -130,19 +129,18 @@ namespace ExpoCIT.Controllers
             rteei.P_12 = "";
             rteei.P_13 = "";
 
-            rteei.DG ??= "";
-
             rteei.estado = true;
 
             var encodedImage = firma.Split(',')[1];
             var decodedImage = Convert.FromBase64String(encodedImage);
             rteei.FirmaDigital = decodedImage;
 
-            dbRTEEI = rteei;
-
-            if (dbRTEEI.Id == 0)
+            if (rteei.Id == 0)
             {
-                _db.RTEIs.Add(dbRTEEI);
+                _db.RTEIs.Add(rteei);
+            } else
+            {
+                _db.Update(rteei);
             }
 
             _db.SaveChanges();
