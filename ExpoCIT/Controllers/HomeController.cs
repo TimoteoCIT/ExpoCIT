@@ -76,6 +76,18 @@ namespace ExpoCIT.Controllers
             return RedirectToAction("Index", "User");
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("LoginJuez");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
         public IActionResult Usuario()
         {
             return View();

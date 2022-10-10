@@ -12,7 +12,7 @@ builder.Services.AddDbContext<ExpoContext>(options => options.UseSqlServer(build
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = "/Home/Index";
+        options.LoginPath = "/Home/LoginJuez";
         options.AccessDeniedPath = "/Home/AccessDenied";
     });
 
@@ -43,5 +43,4 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=LoginJuez}/{id?}");
-
 app.Run();
