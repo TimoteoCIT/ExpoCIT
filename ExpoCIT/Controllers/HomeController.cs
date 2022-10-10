@@ -59,7 +59,7 @@ namespace ExpoCIT.Controllers
             {
                 return View();
             }
-
+            
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.GivenName, dbUsuario.Nombre),
