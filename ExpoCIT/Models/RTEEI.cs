@@ -131,6 +131,8 @@ namespace ExpoCIT.Models
         public string? DG { get; set; }
 
         public byte[] FirmaDigital { get; set; }
+
+        public int ProyectoId { get; set; }
         public Proyecto Proyecto { get; set; }
     }
 }
