@@ -151,7 +151,7 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormProyectoExpoJovem(int idProyecto)
         {
-            var rubricaProyecto = _db.RTEJs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
+            var rubricaProyecto = _db.RTEJs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaProyecto ??= new RPEJ();
             rubricaProyecto.Proyecto = _db.Proyectos
                 .Include(x => x.Juez)
