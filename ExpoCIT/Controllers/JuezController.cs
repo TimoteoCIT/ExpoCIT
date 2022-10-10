@@ -46,7 +46,7 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormProyectoExpoIngenieria(int idProyecto)
         {
-            var rubricaProyecto = _db.RPEIs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
+            var rubricaProyecto = _db.RPEIs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaProyecto ??= new RPEI();
             rubricaProyecto.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
@@ -87,7 +87,7 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormTrabajoEscritoExpoIngenieria(int idProyecto)
         {
-            var rubricaTrabajoEscrito = _db.RTEIs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
+            var rubricaTrabajoEscrito = _db.RTEIs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaTrabajoEscrito ??= new RTEEI();
             rubricaTrabajoEscrito.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
@@ -95,17 +95,52 @@ namespace ExpoCIT.Controllers
         }
 
         [HttpPost]
-        public IActionResult FormTrabajoEscritoExpoIngenieria(RTEEI rteei)
+        public IActionResult FormTrabajoEscritoExpoIngenieria(RTEEI rteei, int idProyecto, string firma)
         {
-            RTEEI? dbRTEEI = _db.RTEIs.Find(rteei.Id);
+            RTEEI? dbRTEEI = _db.RTEIs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
+            dbRTEEI ??= new RTEEI();
+            rteei.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
-            if (dbRTEEI == null)
-                return View();
+            rteei.I_subtotal = rteei.I_a + rteei.I_b + rteei.I_c + rteei.I_d + rteei.I_e;
+            rteei.II_subtotal = rteei.II_a + rteei.II_b + rteei.II_c + rteei.II_d + rteei.II_e + rteei.II_f;
+            rteei.III_subtotal = rteei.III_a + rteei.III_b + rteei.III_c + rteei.III_d;
+            rteei.IV_subtotal = rteei.IV_a + rteei.IV_b + rteei.IV_c + rteei.IV_d + rteei.IV_e;
+            rteei.V_subtotal = rteei.V_a + rteei.V_b + rteei.V_c + rteei.V_d + rteei.V_e + rteei.V_f;
+            rteei.VI_subtotal = rteei.VI_a + rteei.VI_b + rteei.VI_c + rteei.VI_d + rteei.VI_e + rteei.VI_f;
+            rteei.VII_subtotal = rteei.VII_a + rteei.VII_b + rteei.VII_c + rteei.VII_d + rteei.VII_e;
+            rteei.VIII_subtotal = rteei.VIII_a + rteei.VIII_b + rteei.VIII_c + rteei.VIII_d + rteei.VIII_e;
+
+            rteei.P_1 = "";
+            rteei.P_2 = "";
+            rteei.P_3 = "";
+            rteei.P_4 = "";
+            rteei.P_5 = "";
+            rteei.P_6 = "";
+            rteei.P_7 = "";
+            rteei.P_8 = "";
+            rteei.P_9 = "";
+            rteei.P_10 = "";
+            rteei.P_11 = "";
+            rteei.P_12 = "";
+            rteei.P_13 = "";
+
+            rteei.DG ??= "";
+
+            rteei.estado = true;
+
+            var encodedImage = firma.Split(',')[1];
+            var decodedImage = Convert.FromBase64String(encodedImage);
+            rteei.FirmaDigital = decodedImage;
 
             dbRTEEI = rteei;
 
+            if (dbRTEEI.Id == 0)
+            {
+                _db.RTEIs.Add(dbRTEEI);
+            }
+
             _db.SaveChanges();
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
         public IActionResult FormProyectoExpoJovem(int idProyecto)
