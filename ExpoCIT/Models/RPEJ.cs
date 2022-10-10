@@ -53,7 +53,7 @@
         public string VII_35 { get; set; }
         public double VII_subtotal { get; set; }
 
-        public double total
+        public double Total
         {
             get
             {

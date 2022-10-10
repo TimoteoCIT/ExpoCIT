@@ -112,7 +112,7 @@
         public string? VIII_d_descripcion { get; set; }
         public int VIII_subtotal { get; set; }
 
-        public int total {
+        public int Total {
             get {
                 return I_subtotal + II_subtotal + III_subtotal + IV_subtotal + V_subtotal + VI_subtotal + VII_subtotal + VIII_subtotal;
             }

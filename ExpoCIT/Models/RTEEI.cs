@@ -106,7 +106,7 @@ namespace ExpoCIT.Models
         public string? VIII_e_descripcion { get; set; }
         public int VIII_subtotal { get; set; }
 
-        public int total
+        public int Total
         {
             get
             {
