@@ -22,11 +22,13 @@ namespace ExpoCIT.Controllers
 
         public IActionResult ProyectosEJ()
         {
-            return View();
+            var ProyectosEJ = _db.Proyectos.ToList().FindAll(x => x.TipoProyecto == TipoProyecto.ExpoJovem);
+            return View(ProyectosEJ);
         }
         public IActionResult ProyectosEI()
         {
-            return View();
+            var ProyectosEI = _db.Proyectos.ToList().FindAll(x => x.TipoProyecto == TipoProyecto.ExpoIngenieria);
+            return View(ProyectosEI);
         }
 
         public IActionResult BtnFormProyecto(int idProyecto)
