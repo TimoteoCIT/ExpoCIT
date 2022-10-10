@@ -1,66 +1,68 @@
-﻿namespace ExpoCIT.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ExpoCIT.Models
 {
     public class RTEEI : Auditable
     {
         public int Id { get; set; }
 
-        public string I_a { get; set; }
-        public string I_b { get; set; }
-        public string I_c { get; set; }
-        public string I_d { get; set; }
-        public string I_e { get; set; }
-        public double I_subtotal { get; set; }
+        public int I_a { get; set; }
+        public int I_b { get; set; }
+        public int I_c { get; set; }
+        public int I_d { get; set; }
+        public int I_e { get; set; }
+        public int I_subtotal { get; set; }
 
-        public string II_a { get; set; }
-        public string II_b { get; set; }
-        public string II_c { get; set; }
-        public string II_d { get; set; }
-        public string II_e { get; set; }
-        public string II_f { get; set; }
-        public double II_subtotal { get; set; }
+        public int II_a { get; set; }
+        public int II_b { get; set; }
+        public int II_c { get; set; }
+        public int II_d { get; set; }
+        public int II_e { get; set; }
+        public int II_f { get; set; }
+        public int II_subtotal { get; set; }
 
-        public string III_a { get; set; }
-        public string III_b { get; set; }
-        public string III_c { get; set; }
-        public string III_d { get; set; }
-        public double III_subtotal { get; set; }
+        public int III_a { get; set; }
+        public int III_b { get; set; }
+        public int III_c { get; set; }
+        public int III_d { get; set; }
+        public int III_subtotal { get; set; }
 
-        public string IV_a { get; set; }
-        public string IV_b { get; set; }
-        public string IV_c { get; set; }
-        public string IV_d { get; set; }
-        public string IV_e { get; set; }
-        public double IV_subtotal { get; set; }
+        public int IV_a { get; set; }
+        public int IV_b { get; set; }
+        public int IV_c { get; set; }
+        public int IV_d { get; set; }
+        public int IV_e { get; set; }
+        public int IV_subtotal { get; set; }
 
-        public string V_a { get; set; }
-        public string V_b { get; set; }
-        public string V_c { get; set; }
-        public string V_d { get; set; }
-        public string V_e { get; set; }
-        public string V_f { get; set; }
-        public double V_subtotal { get; set; }
+        public int V_a { get; set; }
+        public int V_b { get; set; }
+        public int V_c { get; set; }
+        public int V_d { get; set; }
+        public int V_e { get; set; }
+        public int V_f { get; set; }
+        public int V_subtotal { get; set; }
 
-        public string VI_a { get; set; }
-        public string VI_b { get; set; }
-        public string VI_c { get; set; }
-        public string VI_d { get; set; }
-        public string VI_e { get; set; }
-        public string VI_f { get; set; }
-        public double VI_subtotal { get; set; }
+        public int VI_a { get; set; }
+        public int VI_b { get; set; }
+        public int VI_c { get; set; }
+        public int VI_d { get; set; }
+        public int VI_e { get; set; }
+        public int VI_f { get; set; }
+        public int VI_subtotal { get; set; }
 
-        public string VII_a { get; set; }
-        public string VII_b { get; set; }
-        public string VII_c { get; set; }
-        public string VII_d { get; set; }
-        public string VII_e { get; set; }
-        public double VII_subtotal { get; set; }
+        public int VII_a { get; set; }
+        public int VII_b { get; set; }
+        public int VII_c { get; set; }
+        public int VII_d { get; set; }
+        public int VII_e { get; set; }
+        public int VII_subtotal { get; set; }
 
-        public string VIII_a { get; set; }
-        public string VIII_b { get; set; }
-        public string VIII_c { get; set; }
-        public string VIII_d { get; set; }
-        public string VIII_e { get; set; }
-        public double VIII_subtotal { get; set; }
+        public int VIII_a { get; set; }
+        public int VIII_b { get; set; }
+        public int VIII_c { get; set; }
+        public int VIII_d { get; set; }
+        public int VIII_e { get; set; }
+        public int VIII_subtotal { get; set; }
 
         public string P_1 { get; set; }
         public string P_2 { get; set; }
@@ -76,6 +78,7 @@
         public string P_12 { get; set; }
         public string P_13 { get; set; }
 
+        [Required]
         public string DG { get; set; }
 
         public byte[] FirmaDigital { get; set; }
