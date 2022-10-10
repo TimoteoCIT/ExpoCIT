@@ -48,7 +48,10 @@ namespace ExpoCIT.Controllers
         {
             var rubricaProyecto = _db.RPEIs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaProyecto ??= new RPEI();
-            rubricaProyecto.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
+            rubricaProyecto.Proyecto = _db.Proyectos
+                .Include(x => x.Juez)
+                .FirstOrDefault(x => x.Id == idProyecto)
+                ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
             return View("FormProyecto", rubricaProyecto);
         }
@@ -89,7 +92,10 @@ namespace ExpoCIT.Controllers
         {
             var rubricaTrabajoEscrito = _db.RTEIs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaTrabajoEscrito ??= new RTEEI();
-            rubricaTrabajoEscrito.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
+            rubricaTrabajoEscrito.Proyecto = _db.Proyectos
+                .Include(x => x.Juez)
+                .FirstOrDefault(x => x.Id == idProyecto)
+                ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
             return View("FormTrabajoEscrito", rubricaTrabajoEscrito);
         }
@@ -147,7 +153,10 @@ namespace ExpoCIT.Controllers
         {
             var rubricaProyecto = _db.RTEJs.Include(x => x.Proyecto).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaProyecto ??= new RPEJ();
-            rubricaProyecto.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
+            rubricaProyecto.Proyecto = _db.Proyectos
+                .Include(x => x.Juez)
+                .FirstOrDefault(x => x.Id == idProyecto)
+                ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
             return View(rubricaProyecto);
         }
