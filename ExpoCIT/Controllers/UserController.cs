@@ -5,6 +5,12 @@ using System.Diagnostics;
 
 namespace ExpoCIT.Controllers
 {
+    public class GanadoresModel
+    {
+        public List<Proyecto> GanadoresExpoIngenieria { get; set; } = new List<Proyecto>();
+        public List<Proyecto> GanadoresExpoJovem { get; set; } = new List<Proyecto>();
+    }
+
     public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;
@@ -92,7 +98,26 @@ namespace ExpoCIT.Controllers
 
         public IActionResult Ganadores()
         {
-            return View();
+            var ganadores = new GanadoresModel
+            {
+                GanadoresExpoIngenieria = _db.Proyectos
+                    .Include(x => x.Rpei)
+                    .Include(x => x.Rteei).ToList()
+                    .FindAll(x => x.TipoProyecto == TipoProyecto.ExpoIngenieria)
+                    .OrderBy(x => (x.Rteei?.Total + x.Rpei?.Total) / 2f)
+                    .ThenBy(x => x.Nombre)
+                    .Take(3)
+                    .ToList(),
+                GanadoresExpoJovem = _db.Proyectos
+                    .Include(x => x.Rpej).ToList()
+                    .FindAll(x => x.TipoProyecto == TipoProyecto.ExpoJovem)
+                    .OrderBy(x => x.Rpej?.Total)
+                    .ThenBy(x => x.Nombre)
+                    .Take(3)
+                    .ToList()
+            };
+
+            return View(ganadores);
         }
 
 
