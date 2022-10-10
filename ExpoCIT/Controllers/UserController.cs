@@ -20,25 +20,32 @@ namespace ExpoCIT.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult VerRubrica(int idProyecto, TipoRubrica btnPresionado)
+        {
+            switch (btnPresionado)
+            {
+                case TipoRubrica.ProyectoExpoIngenieria:
+                    return RedirectToAction("RubricaProyecto", new { idProyecto = idProyecto });
+                case TipoRubrica.TrabajoEscritoExpoIngenieria:
+                    return RedirectToAction("RubricaTrabajoEscrito", new { idProyecto = idProyecto });
+                case TipoRubrica.ProyectoExpoJovem:
+                    return RedirectToAction("RubricaProyectoExpoJovem", new { idProyecto = idProyecto });
+                default:
+                    return RedirectToAction("Index");
+            }
+        }
+
         public IActionResult ProyectosEJ()
         {
             var ProyectosEJ = _db.Proyectos.ToList().FindAll(x => x.TipoProyecto == TipoProyecto.ExpoJovem);
             return View(ProyectosEJ);
         }
+
         public IActionResult ProyectosEI()
         {
             var ProyectosEI = _db.Proyectos.ToList().FindAll(x => x.TipoProyecto == TipoProyecto.ExpoIngenieria);
             return View(ProyectosEI);
-        }
-
-        public IActionResult BtnFormProyecto(int idProyecto)
-        {
-            return RubricaProyecto(idProyecto);
-        }
-
-        public IActionResult BtnFormTrabajoEscrito(int idProyecto)
-        {
-            return RubricaTrabajoEscrito(idProyecto);
         }
 
         public IActionResult Juez()
@@ -52,6 +59,11 @@ namespace ExpoCIT.Controllers
         }
 
         public IActionResult RubricaTrabajoEscrito(int idProyecto)
+        {
+            return View();
+        }
+
+        public IActionResult RubricaProyectoExpoJovem(int idProyecto)
         {
             return View();
         }

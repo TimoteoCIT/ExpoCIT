@@ -11,10 +11,10 @@
         <h5 class="modal-title" id="nameProyecto">Nombre del Proyecto</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form method="post">
+      <form asp-action="VerRubrica" method="post">
         <div class="modal-body d-flex flex-column flex-md-row justify-content-center justify-content-md-around gap-5">
             <input type="text" readonly class="form-control-plaintext d-none" id="idProyecto" name="idProyecto" value="">
-            <a class="btn btn-success btn-lg" id="FormProyecto" asp-action="BtnFormProyecto">Rubrica del Proyecto</a>
+            <button class="btn btn-success btn-lg" id="FormProyecto" name="btnPresionado" value="@TipoRubrica.ProyectoExpoJovem">Rubrica del Proyecto</button>
         </div>
       </form>
       <div class="modal-footer">
@@ -50,4 +50,5 @@ RubricasModal.addEventListener('show.bs.modal', function (event) {
     var name = button.getAttribute('data-bs-name');
     RubricasModal.querySelector('.modal-body #idProyecto').value = id;
     RubricasModal.querySelector('.modal-header #nameProyecto').innerHTML = "Rubricas del proyecto " + name;
+});
 </script>
