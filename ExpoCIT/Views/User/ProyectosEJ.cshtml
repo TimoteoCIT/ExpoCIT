@@ -14,9 +14,9 @@
       <form asp-action="VerRubrica" method="post">
           <div class="modal-body d-flex flex-column flex-md-row justify-content-center justify-content-md-around gap-5">
                 <input type="text" readonly class="form-control-plaintext d-none" id="idProyecto" name="idProyecto">
-                <button class="btn btn-success btn-lg" id="FormProyecto" name="btnPresionado" value="@TipoRubrica.ProyectoExpoIngenieria">Rubrica del Proyecto</button>
-                <button class="btn btn-success btn-lg" id="FormTrabajoEscrito" name="btnPresionado" value="@TipoRubrica.TrabajoEscritoExpoIngenieria">Rubrica del Trabajo Escrito</button>
-                <button class="btn btn-success btn-lg" id="FormProyectoExpoJovem" name="btnPresionado" value="@TipoRubrica.ProyectoExpoJovem">Rubrica del Proyecto</button>
+                <button class="btn btn-success btn-lg" id="FormProyecto" name="btnPresionado"           value="@TipoRubrica.ProyectoExpoIngenieria">Rubrica del Proyecto</button>
+                <button class="btn btn-success btn-lg" id="FormTrabajoEscrito" name="btnPresionado"     value="@TipoRubrica.TrabajoEscritoExpoIngenieria">Rubrica del Trabajo Escrito</button>
+                <button class="btn btn-success btn-lg" id="FormProyectoExpoJovem" name="btnPresionado"  value="@TipoRubrica.ProyectoExpoJovem">Rubrica del Proyecto</button>
           </div>
       </form>
       <div class="modal-footer">
@@ -62,5 +62,5 @@ RubricasModal.addEventListener('show.bs.modal', function(event) {
         document.getElementById("FormProyecto").style.display = "inline";
         document.getElementById("FormProyectoExpoJovem").style.display = "none";
     }
-})
+});
 </script>

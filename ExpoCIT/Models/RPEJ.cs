@@ -53,9 +53,19 @@
         public string VII_35 { get; set; }
         public double VII_subtotal { get; set; }
 
+        public double Total
+        {
+            get
+            {
+                return I_subtotal + II_subtotal + III_subtotal + IV_subtotal + V_subtotal + VI_subtotal + VII_subtotal;
+            }
+        }
+
         public string DG { get; set; }
 
         public byte[] FirmaDigital { get; set; }
+
+        public int ProyectoId { get; set; }
         public Proyecto Proyecto { get; set; }
     }
 }
