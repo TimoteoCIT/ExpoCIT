@@ -106,6 +106,14 @@ namespace ExpoCIT.Models
         public string? VIII_e_descripcion { get; set; }
         public int VIII_subtotal { get; set; }
 
+        public int total
+        {
+            get
+            {
+                return I_subtotal + II_subtotal + III_subtotal + IV_subtotal + V_subtotal + VI_subtotal + VII_subtotal + VIII_subtotal;
+            }
+        }
+
         public string P_1 { get; set; }
         public string P_2 { get; set; }
         public string P_3 { get; set; }
