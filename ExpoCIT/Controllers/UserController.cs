@@ -1,5 +1,6 @@
 ﻿using ExpoCIT.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ExpoCIT.Controllers
@@ -26,9 +27,9 @@ namespace ExpoCIT.Controllers
             switch (btnPresionado)
             {
                 case TipoRubrica.ProyectoExpoIngenieria:
-                    return RedirectToAction("RubricaProyecto", new { idProyecto = idProyecto });
+                    return RedirectToAction("RubricaProyectoExpoIngenieria", new { idProyecto = idProyecto });
                 case TipoRubrica.TrabajoEscritoExpoIngenieria:
-                    return RedirectToAction("RubricaTrabajoEscrito", new { idProyecto = idProyecto });
+                    return RedirectToAction("RubricaTrabajoEscritoExpoIngenieria", new { idProyecto = idProyecto });
                 case TipoRubrica.ProyectoExpoJovem:
                     return RedirectToAction("RubricaProyectoExpoJovem", new { idProyecto = idProyecto });
                 default:
@@ -53,19 +54,40 @@ namespace ExpoCIT.Controllers
             return View();
         }
 
-        public IActionResult RubricaProyecto(int idProyecto)
+        public IActionResult RubricaProyectoExpoIngenieria(int idProyecto)
         {
-            return View();
+            var rpei = _db.RPEIs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
+            rpei ??= new RPEI();
+            rpei.Proyecto = _db.Proyectos
+                .Include(x => x.Juez)
+                .FirstOrDefault(x => x.Id == idProyecto)
+                ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
+
+            return View("RubricaProyecto", rpei);
         }
 
-        public IActionResult RubricaTrabajoEscrito(int idProyecto)
+        public IActionResult RubricaTrabajoEscritoExpoIngenieria(int idProyecto)
         {
-            return View();
+            var rteei = _db.RTEIs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
+            rteei ??= new RTEEI();
+            rteei.Proyecto = _db.Proyectos
+                .Include(x => x.Juez)
+                .FirstOrDefault(x => x.Id == idProyecto)
+                ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
+
+            return View("RubricaTrabajoEscrito", rteei);
         }
 
         public IActionResult RubricaProyectoExpoJovem(int idProyecto)
         {
-            return View();
+            var rpej = _db.RTEJs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
+            rpej ??= new RPEJ();
+            rpej.Proyecto = _db.Proyectos
+                .Include(x => x.Juez)
+                .FirstOrDefault(x => x.Id == idProyecto)
+                ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
+
+            return View(rpej);
         }
 
         public IActionResult Ganadores()
