@@ -41,7 +41,7 @@
 
                     </div>
                     <div class="col d-flex justify-content-center align-items-end">
-                        <h4>ExauGr</h4>
+                        <h4>@Model.GanadoresExpoJovem[0].Nombre</h4>
                     </div>
                     <div class="col d-flex justify-content-center align-items-end">
 
@@ -49,13 +49,13 @@
                 </div>
                 <div class="row">
                     <div class="col d-flex justify-content-center align-items-end">
-                        <h4>Purificador</h4>
+                        <h4>@Model.GanadoresExpoJovem[1].Nombre</h4>
                     </div>
                     <div class="col d-flex justify-content-center align-items-end podio" style="border-bottom-color: black;">
                         <img class="premioPodio" src="~/media/PrimerLugar.webp"/>
                     </div>
                     <div class="col d-flex justify-content-center align-items-end">
-                        <h4>Volcan</h4>
+                        <h4>@Model.GanadoresExpoJovem[2].Nombre</h4>
                     </div>
                 </div>
                 <div class="row">
@@ -77,20 +77,20 @@
                     <div class="col">
                     </div>
                     <div class="col d-flex justify-content-center align-items-end">
-                        <h4>ExauGr</h4>
+                        <h4>@Model.GanadoresExpoIngenieria[0].Nombre</h4>
                     </div>
                     <div class="col">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col d-flex justify-content-center align-items-end">
-                        <h4>Purificador</h4>
+                        <h4>@Model.GanadoresExpoIngenieria[1].Nombre</h4>
                     </div>
                     <div class="col d-flex justify-content-center align-items-end podio" style="border-bottom-color: black;">
                         <img class="premioPodio" src="~/media/PrimerLugar.webp"/>
                     </div>
                     <div class="col d-flex justify-content-center align-items-end">
-                        <h4>Volcan</h4>
+                        <h4>@Model.GanadoresExpoIngenieria[2].Nombre</h4>
                     </div>
                 </div>
                 <div class="row">
@@ -179,34 +179,6 @@ RubricasModal.addEventListener('show.bs.modal', function(event) {
 })
 </script>
 
-@*expojovem
-<h2>Primer lugar</h2>
-@Model.GanadoresExpoJovem[0].Nombre
-<h2>Segundo lugar</h2>
-@Model.GanadoresExpoJovem[1].Nombre
-<h2>Tercer lugar</h2>
-@Model.GanadoresExpoJovem[2].Nombre
-
-Expoingieneria
-<h2>Primer lugar</h2>
-@Model.GanadoresExpoIngenieria[0].Nombre
-<h2>Segundo lugar</h2>
-@Model.GanadoresExpoIngenieria[1].Nombre
-<h2>Tercer lugar</h2>
-@Model.GanadoresExpoIngenieria[2].Nombre
-
-@foreach (var proyecto in Model.GanadoresExpoIngenieria)
-{
-    <div class="card my-4" style="border-radius: 10px;">
-        <h4 class="card-header">@proyecto.Nombre - @proyecto.TipoProyecto</h4>
-        <div class="card-body">
-            <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
-            <footer class="card-unit">
-                <p>Integrantes:</p>
-                @proyecto.Integrantes
-            </footer>
-            <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
-        </div>
-    </div>
-}
-*@
+<footer class="border-top footer text-muted p-3">
+    <a asp-controller="User" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
+</footer>
