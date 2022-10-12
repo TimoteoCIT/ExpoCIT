@@ -26,8 +26,11 @@
   </div>
 </div>
 
-<h2 class="m-3">Proyectos</h2>
+<h2 class="ms-3 my-2">Pagina Principal</h2>
 <div class="container-lg">
+    <div class="d-flex justify-content-start justify-content-sm-center">
+        <h2 class="my-2">Proyectos a revisar</h2>
+    </div>
     @if (Model.Proyectos != null) {
         @foreach (var proyecto in Model.Proyectos)
         {
@@ -44,9 +47,14 @@
             </div>
         }
     } else {
-        <h1 style="color: red">No tiene ningun proyecto asignado</h1>
+        <h2 style="color: red">No tiene ningun proyecto asignado</h2>
     }
+    <div class="d-flex justify-content-start justify-content-sm-center">
+        <h2 class="my-2">Proyectos revisados</h2>
+    </div>
+    @*Proyectos que salgan desabilitados*@
 </div>
+
 
 <script>
     var RubricasModal = document.getElementById('Rubricas');

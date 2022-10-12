@@ -1,5 +1,6 @@
-﻿@{
-    ViewData["Title"] = "ProyectoExpoIngeneria";
+﻿@model RPEI
+@{
+    ViewData["Title"] = "FormProyectoExpoIngeneria";
 }
 
 <div class="d-flex justify-content-evenly" style="max-height: 150px;">
@@ -9,14 +10,14 @@
 <div class=" mt-2 p-4 container-lg formulario">
     <h2>ExpoIngenería</h2>
     <h2 class=" mt-1 mb-5">FORMULARIO PARA LA EVALUACIÓN DE LOS PROYECTOS</h2>
-    <form>
+    <form method="post">
         <div class="container">
             <div class="row">
                 <div class="col-lg-auto py-2">
                     <h5>Código:</h5>
                 </div>
                 <div class="col-lg py-2">
-                    <input type="text" readonly class="form-control-plaintext">  
+                    <input type="text" readonly disabled class="form-control-plaintext"> @*AUTORELLENAR*@
                 </div>
             </div>
             <div class="row">
@@ -24,7 +25,7 @@
                     <h5>Nombre del proyecto:</h5>
                 </div>
                 <div class="col-lg py-2">
-                    <input type="text" readonly class="form-control-plaintext">  
+                    <input type="text" readonly disabled class="form-control-plaintext" value="@Model.Proyecto.Nombre" />
                 </div>
             </div>
             <div class="row">
@@ -32,7 +33,7 @@
                     <h5>Nombre de los estudiantes:</h5>
                 </div>
                 <div class="col-lg py-2">
-                    <textarea readonly class="form-control-plaintext" rows="4"></textarea>  
+                    <textarea readonly disabled class="form-control-plaintext" rows="4">@Model.Proyecto.Integrantes</textarea>
                 </div>
             </div>
         </div>
@@ -60,22 +61,16 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="AARadio0" value="0" name="AARDB">
-                          <label class="form-check-label" for="AARadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="AARadio1" value="1" name="AARDB">
-                          <label class="form-check-label" for="AARadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="AARadio2" value="2" name="AARDB">
-                          <label class="form-check-label" for="AARadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++) {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="I_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="I_a_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -85,22 +80,16 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ABRadio0" value="0" name="ABRDB">
-                          <label class="form-check-label" for="ABRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ABRadio1" value="1" name="ABRDB">
-                          <label class="form-check-label" for="ABRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ABRadio2" value="2" name="ABRDB">
-                          <label class="form-check-label" for="ABRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++) {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="I_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="I_b_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -110,22 +99,16 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ACRadio0" value="0" name="ACRDB">
-                          <label class="form-check-label" for="ACRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ACRadio1" value="1" name="ACRDB">
-                          <label class="form-check-label" for="ACRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ACRadio2" value="2" name="ACRDB">
-                          <label class="form-check-label" for="ACRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++) {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="I_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="I_c_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -135,22 +118,16 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ADRadio0" value="0" name="ADRDB">
-                          <label class="form-check-label" for="ADRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ADRadio1" value="1" name="ADRDB">
-                          <label class="form-check-label" for="ADRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ADRadio2" value="2" name="ADRDB">
-                          <label class="form-check-label" for="ADRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++) {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="I_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="I_d_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -160,22 +137,16 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="AERadio0" value="0" name="AERDB">
-                          <label class="form-check-label" for="AERadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="AERadio1" value="1" name="AERDB">
-                          <label class="form-check-label" for="AERadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="AERadio2" value="2" name="AERDB">
-                          <label class="form-check-label" for="AERadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++) {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="I_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="I_e_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -183,7 +154,7 @@
                     <h5>Subtotal</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <input type="text" readonly class="form-control-plaintext" id="Asubtotal" value="0">
+                    <input asp-for="I_subtotal" readonly disabled class="form-control-plaintext"/>
                 </div>
             </div>
             @*-----------------------------------------------------------------------------------------------------------*@
@@ -205,26 +176,16 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BARadio0" value="0" name="BARDB">
-                          <label class="form-check-label" for="BARadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BARadio1" value="1" name="BARDB">
-                          <label class="form-check-label" for="BARadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BARadio2" value="2" name="BARDB">
-                          <label class="form-check-label" for="BARadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BARadio3" value="3" name="BARDB">
-                          <label class="form-check-label" for="BARadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++) {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="II_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="II_a_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -234,26 +195,16 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BBRadio0" value="0" name="BBRDB">
-                          <label class="form-check-label" for="BBRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BBRadio1" value="1" name="BBRDB">
-                          <label class="form-check-label" for="BBRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BBRadio2" value="2" name="BBRDB">
-                          <label class="form-check-label" for="BBRadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BBRadio3" value="3" name="BBRDB">
-                          <label class="form-check-label" for="BBRadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++) {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="II_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="II_b_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -263,26 +214,16 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BCRadio0" value="0" name="BCRDB">
-                          <label class="form-check-label" for="BCRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BCRadio1" value="1" name="BCRDB">
-                          <label class="form-check-label" for="BCRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BCRadio2" value="2" name="BCRDB">
-                          <label class="form-check-label" for="BCRadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BCRadio3" value="3" name="BCRDB">
-                          <label class="form-check-label" for="BCRadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++) {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="II_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="II_c_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -292,26 +233,17 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BDRadio0" value="0" name="BDRDB">
-                          <label class="form-check-label" for="BDRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BDRadio1" value="1" name="BDRDB">
-                          <label class="form-check-label" for="BDRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BDRadio2" value="2" name="BDRDB">
-                          <label class="form-check-label" for="BDRadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BDRadio3" value="3" name="BDRDB">
-                          <label class="form-check-label" for="BDRadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="II_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="II_d_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -321,26 +253,17 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BERadio0" value="0" name="BERDB">
-                          <label class="form-check-label" for="BERadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BERadio1" value="1" name="BERDB">
-                          <label class="form-check-label" for="BERadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BERadio2" value="2" name="BERDB">
-                          <label class="form-check-label" for="BERadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BERadio3" value="3" name="BERDB">
-                          <label class="form-check-label" for="BERadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="II_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="II_e_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -350,26 +273,17 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BFRadio0" value="0" name="BFRDB">
-                          <label class="form-check-label" for="BFRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BFRadio1" value="1" name="BFRDB">
-                          <label class="form-check-label" for="BFRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BFRadio2" value="2" name="BFRDB">
-                          <label class="form-check-label" for="BFRadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="BFRadio3" value="3" name="BFRDB">
-                          <label class="form-check-label" for="BFRadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="II_f" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="II_f_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -377,7 +291,7 @@
                     <h5>Subtotal</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <input type="text" readonly class="form-control-plaintext" id="Bsubtotal" value="0">
+                    <input asp-for="II_subtotal" readonly disabled class="form-control-plaintext"/>
                 </div>
             </div>
             @*-----------------------------------------------------------------------------------------------------------*@
@@ -399,22 +313,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CARadio0" value="0" name="CARDB">
-                          <label class="form-check-label" for="CARadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CARadio1" value="1" name="CARDB">
-                          <label class="form-check-label" for="CARadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CARadio2" value="2" name="CARDB">
-                          <label class="form-check-label" for="CARadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="III_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="III_a_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -424,22 +333,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CBRadio0" value="0" name="CBRDB">
-                          <label class="form-check-label" for="CBRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CBRadio1" value="1" name="CBRDB">
-                          <label class="form-check-label" for="CBRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CBRadio2" value="2" name="CBRDB">
-                          <label class="form-check-label" for="CBRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="III_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="III_b_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -449,22 +353,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CCRadio0" value="0" name="CCRDB">
-                          <label class="form-check-label" for="CCRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CCRadio1" value="1" name="CCRDB">
-                          <label class="form-check-label" for="CCRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CCRadio2" value="2" name="CCRDB">
-                          <label class="form-check-label" for="CCRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="III_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="III_c_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -474,22 +373,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CDRadio0" value="0" name="CDRDB">
-                          <label class="form-check-label" for="CDRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CDRadio1" value="1" name="CDRDB">
-                          <label class="form-check-label" for="CDRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CDRadio2" value="2" name="CDRDB">
-                          <label class="form-check-label" for="CDRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="III_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="III_d_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -499,22 +393,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CERadio0" value="0" name="CERDB">
-                          <label class="form-check-label" for="CERadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CERadio1" value="1" name="CERDB">
-                          <label class="form-check-label" for="CERadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="CERadio2" value="2" name="CERDB">
-                          <label class="form-check-label" for="CERadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="III_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="III_e_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -522,7 +411,7 @@
                     <h5>Subtotal</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <input type="text" readonly class="form-control-plaintext" id="Csubtotal" value="0">
+                    <input asp-for="III_subtotal" readonly disabled class="form-control-plaintext"/>
                 </div>
             </div>
             @*-----------------------------------------------------------------------------------------------------------*@
@@ -544,22 +433,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DARadio0" value="0" name="DARDB">
-                          <label class="form-check-label" for="DARadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DARadio1" value="1" name="DARDB">
-                          <label class="form-check-label" for="DARadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DARadio2" value="2" name="DARDB">
-                          <label class="form-check-label" for="DARadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="IV_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="IV_a_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -569,22 +453,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DBRadio0" value="0" name="DBRDB">
-                          <label class="form-check-label" for="DBRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DBRadio1" value="1" name="DBRDB">
-                          <label class="form-check-label" for="DBRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DBRadio2" value="2" name="DBRDB">
-                          <label class="form-check-label" for="DBRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="IV_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="IV_b_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -594,22 +473,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DCRadio0" value="0" name="DCRDB">
-                          <label class="form-check-label" for="DCRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DCRadio1" value="1" name="DCRDB">
-                          <label class="form-check-label" for="DCRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DCRadio2" value="2" name="DCRDB">
-                          <label class="form-check-label" for="DCRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="IV_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="IV_c_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -619,22 +493,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DDRadio0" value="0" name="DDRDB">
-                          <label class="form-check-label" for="DDRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DDRadio1" value="1" name="DDRDB">
-                          <label class="form-check-label" for="DDRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DDRadio2" value="2" name="DDRDB">
-                          <label class="form-check-label" for="DDRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="IV_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="IV_d_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -644,22 +513,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DERadio0" value="0" name="DERDB">
-                          <label class="form-check-label" for="DERadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DERadio1" value="1" name="DERDB">
-                          <label class="form-check-label" for="DERadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DERadio2" value="2" name="DERDB">
-                          <label class="form-check-label" for="DERadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="IV_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="IV_e_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -669,22 +533,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DFRadio0" value="0" name="DFRDB">
-                          <label class="form-check-label" for="DFRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DFRadio1" value="1" name="DFRDB">
-                          <label class="form-check-label" for="DFRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="DFRadio2" value="2" name="DFRDB">
-                          <label class="form-check-label" for="DFRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="IV_f" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="IV_f_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -692,7 +551,7 @@
                     <h5>Subtotal</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <input type="text" readonly class="form-control-plaintext" id="Dsubtotal" value="0">
+                    <input asp-for="IV_subtotal" readonly disabled class="form-control-plaintext"/>
                 </div>
             </div>
             @*-----------------------------------------------------------------------------------------------------------*@
@@ -714,26 +573,17 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EARadio0" value="0" name="EARDB">
-                          <label class="form-check-label" for="EARadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EARadio1" value="1" name="EARDB">
-                          <label class="form-check-label" for="EARadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EARadio2" value="2" name="EARDB">
-                          <label class="form-check-label" for="EARadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EARadio3" value="3" name="EARDB">
-                          <label class="form-check-label" for="EARadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="V_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="V_a_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -743,26 +593,17 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EBRadio0" value="0" name="EBRDB">
-                          <label class="form-check-label" for="EBRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EBRadio1" value="1" name="EBRDB">
-                          <label class="form-check-label" for="EBRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EBRadio2" value="2" name="EBRDB">
-                          <label class="form-check-label" for="EBRadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EBRadio3" value="3" name="EBRDB">
-                          <label class="form-check-label" for="EBRadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="V_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="V_b_descripcion"class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -772,26 +613,17 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ECRadio0" value="0" name="ECRDB">
-                          <label class="form-check-label" for="ECRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ECRadio1" value="1" name="ECRDB">
-                          <label class="form-check-label" for="ECRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ECRadio2" value="2" name="ECRDB">
-                          <label class="form-check-label" for="ECRadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="ECRadio3" value="3" name="ECRDB">
-                          <label class="form-check-label" for="ECRadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="V_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="V_c_descripcion"class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -801,26 +633,17 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EDRadio0" value="0" name="EDRDB">
-                          <label class="form-check-label" for="EDRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EDRadio1" value="1" name="EDRDB">
-                          <label class="form-check-label" for="EDRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EDRadio2" value="2" name="EDRDB">
-                          <label class="form-check-label" for="EDRadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EDRadio3" value="3" name="EDRDB">
-                          <label class="form-check-label" for="EDRadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="V_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="V_d_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -830,26 +653,17 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EERadio0" value="0" name="EERDB">
-                          <label class="form-check-label" for="BERadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EERadio1" value="1" name="EERDB">
-                          <label class="form-check-label" for="BERadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EERadio2" value="2" name="EERDB">
-                          <label class="form-check-label" for="BERadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EERadio3" value="3" name="EERDB">
-                          <label class="form-check-label" for="BERadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="V_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="V_e_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -859,26 +673,17 @@
                 <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EFRadio0" value="0" name="EFRDB">
-                          <label class="form-check-label" for="EFRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EFRadio1" value="1" name="EFRDB">
-                          <label class="form-check-label" for="EFRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EFRadio2" value="2" name="EFRDB">
-                          <label class="form-check-label" for="EFRadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="EFRadio3" value="3" name="EFRDB">
-                          <label class="form-check-label" for="EFRadio3">3</label>
-                        </div>
+                        @for (int i = 0; i <= 3; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="V_f" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="V_f_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -886,7 +691,7 @@
                     <h5>Subtotal</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <input type="text" readonly class="form-control-plaintext" id="Esubtotal" value="0">
+                    <input asp-for="V_subtotal" readonly disabled class="form-control-plaintext"/>
                 </div>
             </div>
             @*-----------------------------------------------------------------------------------------------------------*@
@@ -908,22 +713,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FARadio0" value="0" name="FARDB">
-                          <label class="form-check-label" for="FARadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FARadio1" value="1" name="FARDB">
-                          <label class="form-check-label" for="FARadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FARadio2" value="2" name="FARDB">
-                          <label class="form-check-label" for="FARadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VI_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VI_a_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -933,22 +733,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FBRadio0" value="0" name="FBRDB">
-                          <label class="form-check-label" for="FBRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FBRadio1" value="1" name="FBRDB">
-                          <label class="form-check-label" for="FBRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FBRadio2" value="2" name="FBRDB">
-                          <label class="form-check-label" for="FBRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VI_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VI_b_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -958,22 +753,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FCRadio0" value="0" name="FCRDB">
-                          <label class="form-check-label" for="FCRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FCRadio1" value="1" name="FCRDB">
-                          <label class="form-check-label" for="FCRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FCRadio2" value="2" name="FCRDB">
-                          <label class="form-check-label" for="FCRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VI_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VI_c_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -983,22 +773,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FDRadio0" value="0" name="FDRDB">
-                          <label class="form-check-label" for="FDRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FDRadio1" value="1" name="FDRDB">
-                          <label class="form-check-label" for="FDRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FDRadio2" value="2" name="FDRDB">
-                          <label class="form-check-label" for="FDRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VI_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VI_d_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1008,22 +793,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FERadio0" value="0" name="FERDB">
-                          <label class="form-check-label" for="FERadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FERadio1" value="1" name="FERDB">
-                          <label class="form-check-label" for="FERadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FERadio2" value="2" name="FERDB">
-                          <label class="form-check-label" for="FERadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VI_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VI_e_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1033,22 +813,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FFRadio0" value="0" name="FFRDB">
-                          <label class="form-check-label" for="FFRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FFRadio1" value="1" name="FFRDB">
-                          <label class="form-check-label" for="FFRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FFRadio2" value="2" name="FFRDB">
-                          <label class="form-check-label" for="FFRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VI_f" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VI_f_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1058,22 +833,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FGRadio0" value="0" name="FGRDB">
-                          <label class="form-check-label" for="FGRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FGRadio1" value="1" name="FGRDB">
-                          <label class="form-check-label" for="FGRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FGRadio2" value="2" name="FGRDB">
-                          <label class="form-check-label" for="FGRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VI_g" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VI_g_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1083,22 +853,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FHRadio0" value="0" name="FHRDB">
-                          <label class="form-check-label" for="FHRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FHRadio1" value="1" name="FHRDB">
-                          <label class="form-check-label" for="FHRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="FHRadio2" value="2" name="FHRDB">
-                          <label class="form-check-label" for="FHRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VI_h" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VI_h_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1106,7 +871,7 @@
                     <h5>Subtotal</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <input type="text" readonly class="form-control-plaintext" id="Fsubtotal" value="0">
+                    <input asp-for="VI_subtotal" readonly disabled class="form-control-plaintext"/>
                 </div>
             </div>
             @*-----------------------------------------------------------------------------------------------------------*@
@@ -1128,22 +893,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GARadio0" value="0" name="GARDB">
-                          <label class="form-check-label" for="GARadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GARadio1" value="1" name="GARDB">
-                          <label class="form-check-label" for="GARadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GARadio2" value="2" name="GARDB">
-                          <label class="form-check-label" for="GARadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VII_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VII_a_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1153,22 +913,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GBRadio0" value="0" name="GBRDB">
-                          <label class="form-check-label" for="GBRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GBRadio1" value="1" name="GBRDB">
-                          <label class="form-check-label" for="GBRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GBRadio2" value="2" name="GBRDB">
-                          <label class="form-check-label" for="GBRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VII_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VII_b_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1178,22 +933,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GCRadio0" value="0" name="GCRDB">
-                          <label class="form-check-label" for="GCRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GCRadio1" value="1" name="GCRDB">
-                          <label class="form-check-label" for="GCRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GCRadio2" value="2" name="GCRDB">
-                          <label class="form-check-label" for="GCRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VII_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VII_c_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1203,22 +953,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GDRadio0" value="0" name="GDRDB">
-                          <label class="form-check-label" for="GDRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GDRadio1" value="1" name="GDRDB">
-                          <label class="form-check-label" for="GDRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GDRadio2" value="2" name="GDRDB">
-                          <label class="form-check-label" for="GDRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VII_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VII_d_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1228,22 +973,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GERadio0" value="0" name="GERDB">
-                          <label class="form-check-label" for="GERadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GERadio1" value="1" name="GERDB">
-                          <label class="form-check-label" for="GERadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GERadio2" value="2" name="GERDB">
-                          <label class="form-check-label" for="GERadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VII_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VII_e_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1253,22 +993,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GFRadio0" value="0" name="GFRDB">
-                          <label class="form-check-label" for="GFRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GFRadio1" value="1" name="GFRDB">
-                          <label class="form-check-label" for="GFRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="GFRadio2" value="2" name="GFRDB">
-                          <label class="form-check-label" for="GFRadio2">2</label>
-                        </div>
+                        @for (int i = 0; i <= 2; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VII_f" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VII_f_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1276,7 +1011,7 @@
                     <h5>Subtotal</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <input type="text" readonly class="form-control-plaintext" id="Gsubtotal" value="0">
+                    <input asp-for="VII_subtotal" readonly disabled class="form-control-plaintext"/>
                 </div>
             </div>
             @*-----------------------------------------------------------------------------------------------------------*@
@@ -1298,18 +1033,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="HARadio0" value="0" name="HARDB">
-                          <label class="form-check-label" for="HARadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="HARadio1" value="1" name="HARDB">
-                          <label class="form-check-label" for="HARadio1">1</label>
-                        </div>
+                        @for (int i = 0; i <= 1; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VIII_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VIII_a_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1319,18 +1053,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="HBRadio0" value="0" name="HBRDB">
-                          <label class="form-check-label" for="HBRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="HBRadio1" value="1" name="HBRDB">
-                          <label class="form-check-label" for="HBRadio1">1</label>
-                        </div>
+                        @for (int i = 0; i <= 1; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VIII_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VIII_b_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1340,18 +1073,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="HCRadio0" value="0" name="HCRDB">
-                          <label class="form-check-label" for="HCRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="HCRadio1" value="1" name="HCRDB">
-                          <label class="form-check-label" for="HCRadio1">1</label>
-                        </div>
+                        @for (int i = 0; i <= 1; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VIII_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VIII_c_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1361,18 +1093,17 @@
                 <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
                     <h6>Puntos asignados</h6>
                     <div class="d-flex justify-content-around align-items-center">
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="HDRadio0" value="0" name="HDRDB">
-                          <label class="form-check-label" for="HDRadio0">0</label>
-                        </div>
-                        <div class="form-check form-check-inline rdbLetras">
-                          <input class="form-check-input" type="radio" disabled id="HDRadio1" value="1" name="HDRDB">
-                          <label class="form-check-label" for="HDRadio1">1</label>
-                        </div>
+                        @for (int i = 0; i <= 1; i++)
+                        {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="VIII_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="3" placeholder="Observaciones"></textarea>
+                    <textarea asp-for="VIII_d_descripcion" class="form-control" rows="3"   readonly disabled></textarea>
                 </div>
             </div>
             <div class="row">
@@ -1380,7 +1111,7 @@
                     <h5>Subtotal</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <input type="text" readonly class="form-control-plaintext" id="Hsubtotal" value="0">
+                    <input asp-for="VIII_subtotal" readonly disabled class="form-control-plaintext"/>
                 </div>
             </div>
             @*-----------------------------------------------------------------------------------------------------------*@
@@ -1390,7 +1121,7 @@
                     <h5>Puntaje obtenido:</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <input type="text" readonly class="form-control-plaintext" id="total" value="0">
+                    <input type="text" readonly disabled class="form-control-plaintext" id="total" value="0">
                 </div>
             </div>
             <div class="row">
@@ -1398,7 +1129,8 @@
                     <h5>Recomendaciones para la mejora del proyecto</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <textarea class="form-control-plaintext" readonly rows="5" placeholder="Escribe aquí"></textarea>
+                    <textarea class="form-control" readonly disabled rows="5"   asp-for="DG"></textarea>
+                    @*<textarea class="form-control" rows="5"   name="DG"></textarea>*@
                 </div>
             </div>
             <div class="row">
@@ -1406,7 +1138,7 @@
                     <h5>Nombre del juez</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <input class="form-control-plaintext" readonly type="text" placeholder="Escribe aquí">  
+                    <input class="form-control" readonly disabled type="text"   value="@Model.Proyecto.Juez.Nombre">
                 </div>
             </div>
             <div class="row">
@@ -1414,20 +1146,56 @@
                     <h5>Fecha</h5>
                 </div>
                 <div class="col-lg py-2 tabla">
-                    <input class="form-control-plaintext" readonly type="date" placeholder="Escribe aquí">
+                    <input class="form-control" readonly disabled type="date"  >
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg py-2 tabla">
                     <h5>Firma del juez</h5>
                 </div>
-                <div class="col-lg py-2 tabla">
-                    <input class="form-control-plaintext" readonly type="text" placeholder="Escribe aquí">
+                <div class="col-lg py-2 tabla d-flex">
+                    <div class="flex-fill border">
+                        <canvas class="w-100 h-100" style="min-height:150px;"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="my-3 d-flex justify-content-center">
-            <button type="submit" class="btn btn-success btn-lg">Enviar Formulario</button>
+            <button id="btnSubmit" type="submit" class="btn btn-success btn-lg">Enviar Formulario</button>
         </div>
+
+        <input id="firma" name="firma" type="hidden"/>
+
+        <input asp-for="Id" hidden readonly disabled />
     </form>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous"></script>
+
+<script>
+    const canvas = document.querySelector("canvas");
+
+    function resizeCanvas() {
+        const ratio =  Math.max(window.devicePixelRatio || 1, 1);
+        canvas.width = canvas.offsetWidth * ratio;
+        canvas.height = canvas.offsetHeight * ratio;
+        canvas.getContext("2d").scale(ratio, ratio);
+        signaturePad.clear(); // otherwise isEmpty() might return incorrect value
+    }
+
+    const signaturePad = new SignaturePad(canvas, {
+        backgroundColor: 'rgb(255,255,255)'
+    });
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    $("form").submit(function(){
+        const dataURL = signaturePad.toDataURL("image/png");
+        $("#firma").val(dataURL);
+        debugger;
+    })
+</script>
