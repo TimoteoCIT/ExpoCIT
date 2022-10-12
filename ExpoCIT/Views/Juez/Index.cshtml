@@ -1,7 +1,7 @@
 ﻿@model ExpoCIT.Models.Juez
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Pagina Principal";
 }
 <!-- Modal -->
 <div class="modal fade" id="Rubricas" tabindex="-1" aria-labelledby="nameProyecto" aria-hidden="true">
@@ -28,8 +28,8 @@
 
 <h2 class="ms-3 my-2">Pagina Principal</h2>
 <div class="container-lg">
-    <div class="d-flex justify-content-start justify-content-sm-center">
-        <h2 class="my-2">Proyectos a revisar</h2>
+    <div class="d-flex justify-content-center justify-content-md-start">
+        <h2 class="my-2">Proyectos asignados</h2>
     </div>
     @if (Model.Proyectos != null) {
         @foreach (var proyecto in Model.Proyectos)
@@ -49,7 +49,7 @@
     } else {
         <h2 style="color: red">No tiene ningun proyecto asignado</h2>
     }
-    <div class="d-flex justify-content-start justify-content-sm-center">
+    <div class="d-flex justify-content-center justify-content-md-start">
         <h2 class="my-2">Proyectos revisados</h2>
     </div>
     @*Proyectos que salgan desabilitados*@

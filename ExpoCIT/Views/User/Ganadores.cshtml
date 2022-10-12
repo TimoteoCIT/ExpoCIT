@@ -1,5 +1,8 @@
 ﻿@model ExpoCIT.Controllers.GanadoresModel
 @{
+    ViewData["Title"] = "Ganadores";
+}
+@{
     int contador = 0;
     int contador2 = 0;
 }
@@ -95,7 +98,7 @@
                         <img class="premioPodio" src="~/media/SegundoLugar.webp"/>
                     </div>
                     <div class="col d-flex justify-content-center align-items-center podio" style="border-top-color: black; border-right-color: black; border-left-color: black; text-align:center;">
-                        <h3>Premios ExpoIngeneria</h3>
+                        <h3>Premios ExpoIngenería</h3>
                     </div>
                     <div class="col d-flex justify-content-center align-items-center podio" style="border-left-color: black;">
                         <img class="premioPodio" src="~/media/TercerLugar.webp"/>
@@ -130,7 +133,7 @@
         </div>
     }
 
-    <h2 class="my-2">ExpoIngeneria</h2>
+    <h2 class="my-2">ExpoIngenería</h2>
     @foreach (var proyecto in Model.GanadoresExpoIngenieria)
     {
         contador2++;
