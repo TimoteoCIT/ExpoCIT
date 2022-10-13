@@ -160,17 +160,35 @@ namespace ExpoCIT.Controllers
         }
 
         [HttpPost]
-        public IActionResult FormProyectoExpoJovem(RPEJ rpej)
+        public IActionResult FormProyectoExpoJovem(RPEJ rpej, int idProyecto, string firma)
         {
-            RPEJ? dbRPEJ = _db.RTEJs.Find(rpej.Id);
+            rpej.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
-            if (dbRPEJ == null)
-                return View();
+            rpej.I_subtotal = rpej.I_a + rpej.I_b + rpej.I_c + rpej.I_d + rpej.I_e;
+            rpej.II_subtotal = rpej.II_a + rpej.II_b + rpej.II_c + rpej.II_d + rpej.II_e + rpej.II_f;
+            rpej.III_subtotal = rpej.III_a + rpej.III_b + rpej.III_c + rpej.III_d + rpej.III_e;
+            rpej.IV_subtotal = rpej.IV_a + rpej.IV_b + rpej.IV_c + rpej.IV_d + rpej.IV_e + rpej.IV_f;
+            rpej.V_subtotal = rpej.V_a + rpej.V_b + rpej.V_c + rpej.V_d + rpej.V_e;
+            rpej.VI_subtotal = rpej.VI_a + rpej.VI_b + rpej.VI_c + rpej.VI_d;
+            rpej.VII_subtotal = rpej.VII_a + rpej.VII_b + rpej.VII_c + rpej.VII_d;
 
-            dbRPEJ = rpej;
+            rpej.estado = true;
+
+            var encodedImage = firma.Split(',')[1];
+            var decodedImage = Convert.FromBase64String(encodedImage);
+            rpej.FirmaDigital = decodedImage;
+
+            if (rpej.Id == 0)
+            {
+                _db.RTEJs.Add(rpej);
+            }
+            else
+            {
+                _db.Update(rpej);
+            }
 
             _db.SaveChanges();
-            return View("Index");
+            return RedirectToAction("Index");
         }
     }
 }
