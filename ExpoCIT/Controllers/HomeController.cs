@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace ExpoCIT.Controllers
@@ -90,7 +91,37 @@ namespace ExpoCIT.Controllers
 
         public IActionResult Usuario()
         {
-            return View();
+            var claims = User.Identities.First().Claims.ToList();
+            var userClaim = claims.FirstOrDefault(x => x.Type == "User");
+            
+            if (userClaim == null)
+                return RedirectToAction("JuezPerfil");
+            else
+                return RedirectToAction("UsuarioPerfil");
+        }
+
+        public IActionResult JuezPerfil()
+        {
+            var claims = User.Identities.First().Claims.ToList();
+
+            int id;
+            int.TryParse(claims?.FirstOrDefault(x => x.Type == "Id")?.Value, out id);
+
+            var juez = _db.Jueces.Include(x => x.Proyectos).First(x => x.Id == id);
+
+            return View(juez);
+        }
+
+        public IActionResult UsuarioPerfil()
+        {
+            var claims = User.Identities.First().Claims.ToList();
+
+            int id;
+            int.TryParse(claims?.FirstOrDefault(x => x.Type == "Id")?.Value, out id);
+
+            var usuario = _db.Usuarios.First(x => x.Id == id);
+
+            return View(usuario);
         }
     }
 }
