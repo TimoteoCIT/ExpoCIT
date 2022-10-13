@@ -11,3 +11,12 @@
     </div>
     <img class="mb-3" src="~/media/Danger.webp" width="25%;"/>
 </div>
+
+<footer class="border-top footer text-muted p-3 mt-4">
+    @if (@User.HasClaim("User","True"))
+    {
+        <a asp-controller="User" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
+    }else{
+        <a asp-controller="Juez" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
+    }   
+</footer>

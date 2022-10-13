@@ -12,7 +12,7 @@
     <h2 class=" mt-1 mb-5">FORMULARIO PARA LA EVALUACIÓN DE LOS PROYECTOS POR PARTE DEL COMITÉ CIENTÍFICO DE REVISIÓN (CCR)</h2>
     <form method="post">
         <div class="container">
-            <div class="row">
+            <div class="row d-flex align-items-baseline">
                 <div class="col-lg-auto py-2">
                     <h5>Nombre del proyecto:</h5>
                 </div>
@@ -20,7 +20,7 @@
                     <input type="text" readonly class="form-control-plaintext" value="@Model.Proyecto.Nombre">
                 </div>
             </div>
-            <div class="row">
+            <div class="row d-flex align-items-baseline">
                 <div class="col-lg-auto py-2">
                     <h5>Nombre de los estudiantes:</h5>
                 </div>
@@ -56,7 +56,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="I_a" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="I_a" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -76,7 +76,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="I_b" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="I_b" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -96,7 +96,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="I_c" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="I_c" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -116,7 +116,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="I_d" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="I_d" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -136,7 +136,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="I_e" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="I_e" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -176,7 +176,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_a" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="II_a" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -196,7 +196,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_b" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="II_b" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -216,7 +216,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_c" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="II_c" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -236,7 +236,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_d" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="II_d" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -256,7 +256,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_e" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="II_e" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -276,7 +276,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_f" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="II_f" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -316,7 +316,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="III_a" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="III_a" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -336,7 +336,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="III_b" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="III_b" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -356,7 +356,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="III_c" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="III_c" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -376,7 +376,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="III_d" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="III_d" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -416,7 +416,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="IV_a" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="IV_a" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -436,7 +436,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="IV_b" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="IV_b" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -456,7 +456,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="IV_c" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="IV_c" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -476,7 +476,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="IV_d" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="IV_d" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -496,7 +496,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="IV_e" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="IV_e" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -536,7 +536,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_a" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="V_a" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -556,7 +556,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_b" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="V_b" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -576,7 +576,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_c" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="V_c" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -596,7 +596,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_d" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="V_d" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -616,7 +616,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_e" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="V_e" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -636,7 +636,7 @@
                         @for (int i = 0; i <= 2; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_f" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="V_f" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -676,7 +676,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_a" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VI_a" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -696,7 +696,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_b" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VI_b" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -716,7 +716,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_c" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VI_c" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -736,7 +736,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_d" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VI_d" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -756,7 +756,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_e" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VI_e" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -776,7 +776,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_f" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VI_f" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -816,7 +816,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VII_a" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VII_a" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -836,7 +836,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VII_b" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VII_b" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -856,7 +856,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VII_c" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VII_c" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -876,7 +876,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VII_d" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VII_d" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -896,7 +896,7 @@
                         @for (int i = 0; i <= 3; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VII_e" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VII_e" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -936,7 +936,7 @@
                         @for (int i = 0; i <= 1; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VIII_a" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VIII_a" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -956,7 +956,7 @@
                         @for (int i = 0; i <= 1; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VIII_b" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VIII_b" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -976,7 +976,7 @@
                         @for (int i = 0; i <= 1; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VIII_c" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VIII_c" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -996,7 +996,7 @@
                         @for (int i = 0; i <= 1; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VIII_d" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VIII_d" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -1016,7 +1016,7 @@
                         @for (int i = 0; i <= 1; i++)
                         {
                             <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VIII_e" value="@i" type="radio" class="form-check-input">
+                                <input asp-for="VIII_e" value="@i" type="radio" required class="form-check-input rdb">
                                 <label class="form-check-label">@i</label>
                             </div>
                         }
@@ -1104,6 +1104,14 @@
     </form>
 </div>
 
+@if (!Model.estado)
+{
+ <script>
+    let allRadioButtons = document.querySelectorAll('.rdb');
+    allRadioButtons.forEach(value => value.checked = false);
+</script>   
+}
+
 <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
@@ -1134,6 +1142,6 @@
     })
 </script>
 
-<footer class="border-top footer text-muted p-3">
+<footer class="border-top footer text-muted p-3 mt-4">
     <a asp-controller="Juez" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
 </footer>

@@ -10,1098 +10,1093 @@
 <div class=" mt-2 p-4 container-lg formulario">
     <h2>ExpoIngenería</h2>
     <h2 class=" mt-1 mb-5">FORMULARIO PARA LA EVALUACIÓN DE LOS PROYECTOS POR PARTE DEL COMITÉ CIENTÍFICO DE REVISIÓN (CCR)</h2>
-    <form method="post">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-auto py-2">
-                    <h5>Nombre del proyecto:</h5>
-                </div>
-                <div class="col-lg py-2">
-                    <input type="text" readonly disabled class="form-control-plaintext" value="@Model.Proyecto.Nombre">
+    <div class="container">
+        <div class="row d-flex align-items-baseline">
+            <div class="col-lg-auto py-2">
+                <h5>Nombre del proyecto:</h5>
+            </div>
+            <div class="col-lg py-2">
+                <input type="text" readonly disabled class="form-control-plaintext" value="@Model.Proyecto.Nombre">
+            </div>
+        </div>
+        <div class="row d-flex align-items-baseline">
+            <div class="col-lg-auto py-2">
+                <h5>Nombre de los estudiantes:</h5>
+            </div>
+            <div class="col-lg py-2">
+                <textarea disabled readonly class="form-control-plaintext" rows="4" value="@Model.Proyecto.Integrantes"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="container tabla">
+        <div class="row">
+            <div class="col-lg py-2">
+                <h3><b>ASPECTOS POR EVALUAR</b></h3>
+            </div>
+        </div>
+        <div class="row tituloTabla">
+            <div class="col-lg py-2 tabla">
+                <h4><b>I.  Planteamiento del problema</b><br />Cada aspecto vale 2 ptos. Total 10 pts.</h4>
+            </div>
+            <div class="col-lg-2 py-2 tabla">
+                <h4>Puntos asignados</h4>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <h4>Observaciones</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>a. Define los criterios para la solución propuesta.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="I_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-auto py-2">
-                    <h5>Nombre de los estudiantes:</h5>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="I_a_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>b. Claridad en la definición del problema.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="I_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
                 </div>
-                <div class="col-lg py-2">
-                    <textarea disabled readonly class="form-control-plaintext" rows="4" value="@Model.Proyecto.Integrantes"></textarea>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="I_b_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>c.  Identifica el impacto del proyecto.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="I_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="I_c_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>d. Los objetivos están bien definidos.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="I_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="I_d_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>e. Definición de los criterios que fundamentan la solución propuesta.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="I_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="I_e_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>Subtotal</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <input type="text" readonly disabled class="form-control-plaintext" id="Asubtotal" value="0">
+            </div>
+        </div>
+        @*-----------------------------------------------------------------------------------------------------------*@
+        <div class="row tituloTabla">
+            <div class="col-lg py-2 tabla">
+                <h4><b>II.  Justificación del proyecto</b><br />Cada aspecto vale 3 ptos. Total 18 pts.</h4>
+            </div>
+            <div class="col-lg-3 py-2 tabla">
+                <h4>Puntos asignados</h4>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <h4>Observaciones</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>a. El proyecto responde a una necesidad evidente.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="II_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="II_a_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>b. Se identifican los grupos beneficiados.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="II_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="II_b_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>c. El proyecto es factible de ser realizado.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="II_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="II_c_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>d. Es aplicable y tiene un buen nivel de uso potencial.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="II_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="II_d_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>e. Realiza un aporte en el campo de estudio.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="II_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="II_e_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>f. Identifica el impacto potencial en el campo de la ciencia, sociedad, economía o el ambiente.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="II_f" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="II_f_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 py-2 tabla">
+                <h5>Subtotal</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <input type="text" readonly disabled class="form-control-plaintext" id="Bsubtotal" value="0">
+            </div>
+        </div>
+        @*-----------------------------------------------------------------------------------------------------------*@
+        <div class="row tituloTabla">
+            <div class="col-lg py-2 tabla">
+                <h4><b>III.  Originalidad y creatividad del proyecto</b><br />Cada aspecto vale 3 ptos. Total 12 pts.</h4>
+            </div>
+            <div class="col-lg-3 py-2 tabla">
+                <h4>Puntos asignados</h4>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <h4>Observaciones</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>a. Demuestra que el desarrollo es de elaboración propia.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="III_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="III_a_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>b. El proyecto es una innovación y lo demuestra.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="III_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="III_b_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>c. Muestra actualidad tecnológica o nuevo conocimiento científico o técnico.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="III_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="III_c_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>d. Identifica una solución.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="III_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="III_d_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 py-2 tabla">
+                <h5>Subtotal</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <input type="text" readonly disabled class="form-control-plaintext" id="Csubtotal" value="0">
+            </div>
+        </div>
+        @*-----------------------------------------------------------------------------------------------------------*@
+        <div class="row tituloTabla">
+            <div class="col-lg py-2 tabla">
+                <h4><b>IV.  Marco teórico (Fundamento)</b><br />Cada aspecto vale 2 ptos. Total 10 pts.</h4>
+            </div>
+            <div class="col-lg-2 py-2 tabla">
+                <h4>Puntos asignados</h4>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <h4>Observaciones</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>a. Demuestra apropiación (familiaridad y capacidad de manejo)  de los contenidos  que fundamentan el proyecto.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="IV_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="IV_a_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>b. Define los conceptos que utiliza de manera clara y precisa.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="IV_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="IV_b_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>c. Presenta una síntesis apropiada de lo que se conoce del tema en estudio.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="IV_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="IV_c_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>d. Presenta diseños y esquemas claros y correctos.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="IV_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="IV_d_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>e. Fundamenta todas las demostraciones y cálculos necesarios.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="IV_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="IV_e_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>Subtotal</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <input type="text" readonly disabled class="form-control-plaintext" id="Dsubtotal" value="0">
+            </div>
+        </div>
+        @*-----------------------------------------------------------------------------------------------------------*@
+        <div class="row tituloTabla">
+            <div class="col-lg py-2 tabla">
+                <h4><b>V. Metodología</b><br />Cada aspecto vale 2 ptos. Total 12 pts. </h4>
+            </div>
+            <div class="col-lg-2 py-2 tabla">
+                <h4>Puntos asignados</h4>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <h4>Observaciones</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>a. Selección de instrumentos (modelos, programas de computación, equipos y otros) y métodos adecuados.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="V_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="V_a_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>b. Describe la metodología utilizada para la obtención de posibles soluciones.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="V_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="V_b_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>c. Cumplimiento de las etapas planificadas en el diseño del proyecto.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="V_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="V_c_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>d. Hace un uso óptimo de los recursos.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="V_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="V_d_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>e. Describe las metodologías de evaluación y perfeccionamiento.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="V_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="V_e_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>f. Identifica posibles puntos de riesgo.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 2; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="V_f" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="V_f_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>Subtotal</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <input type="text" readonly disabled class="form-control-plaintext" id="Esubtotal" value="0">
+            </div>
+        </div>
+        @*-----------------------------------------------------------------------------------------------------------*@
+        <div class="row tituloTabla">
+            <div class="col-lg py-2 tabla">
+                <h4><b>VI.  Discusión,interpretación y análisis</b><br />Cada aspecto vale 3 ptos. Total 18 pts.</h4>
+            </div>
+            <div class="col-lg-3 py-2 tabla">
+                <h4>Puntos asignados</h4>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <h4>Observaciones</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>a. Coherencia de los objetivos con los resultados obtenidos.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VI_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VI_a_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>b. Análisis de los resultados.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VI_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VI_b_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>c. Los resultados (o el producto) tienen aplicación o utilidad en la vida real.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VI_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VI_c_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>d. Congruencia de los datos, tablas, diagramas y gráficos con el tema investigado.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VI_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VI_d_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>e. Sugiere posibles aplicaciones del desarrollo obtenido (innovación).</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VI_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VI_e_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>f. Coherencia de los diseños y esquemas con respecto al prototipo/modelo/producto presentado.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VI_f" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VI_f_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 py-2 tabla">
+                <h5>Subtotal</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <input type="text" readonly disabled class="form-control-plaintext" id="Fsubtotal" value="0">
+            </div>
+        </div>
+        @*-----------------------------------------------------------------------------------------------------------*@
+        <div class="row tituloTabla">
+            <div class="col-lg py-2 tabla">
+                <h4><b>VII.  Informe escrito</b><br />Cada aspecto vale 3 ptos. Total 15 pts.</h4>
+            </div>
+            <div class="col-lg-3 py-2 tabla">
+                <h4>Puntos asignados</h4>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <h4>Observaciones</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>a. Cumple el formato solicitado según los lineamientos de la Feria Nacional de Ingeniería.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VII_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VII_a_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>b. Presenta una organización lógica de ideas (contenido claro y especifico).</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VII_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VII_b_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>c. Evidencia que fue elaborado por los estudiantes.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VII_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VII_c_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>d. Existe relación de todas y cada una de las partes del informe.</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VII_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VII_d_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>e. Brinda toda la información necesaria (diseños, gráficos, esquemas, otros).</h5>
+            </div>
+            <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 3; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VII_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VII_e_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 py-2 tabla">
+                <h5>Subtotal</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <input type="text" readonly disabled class="form-control-plaintext" id="Gsubtotal" value="0">
+            </div>
+        </div>
+        @*-----------------------------------------------------------------------------------------------------------*@
+        <div class="row tituloTabla">
+            <div class="col-lg py-2 tabla">
+                <h4><b>VIII.  Fuentes bibliográficas</b><br />Cada aspecto vale 1 ptos. Total 5 pts. </h4>
+            </div>
+            <div class="col-lg-2 py-2 tabla">
+                <h4>Puntos asignados</h4>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <h4>Observaciones</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>a. Utiliza diversas fuentes de información (libros, revistas, Internet, entre otros).</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 1; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VIII_a" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VIII_a_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>b. Presenta bibliografía en cantidad y calidad adecuadas.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 1; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VIII_b" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VIII_b_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>c. Relación de las fuentes bibliográficas con el tema investigado.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 1; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VIII_c" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VIII_c_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>d. Capacidad de comprensión y aplicación de la información de las fuentes consultadas.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 1; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VIII_d" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VIII_d_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>e. Existe coherencia en el formato de todas las referencias.</h5>
+            </div>
+            <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
+                <h6>Puntos asignados</h6>
+                <div class="d-flex justify-content-around align-items-center">
+                    @for (int i = 0; i <= 1; i++)
+                    {
+                        <div class="form-check form-check-inline rdbLetras">
+                            <input asp-for="VIII_e" value="@i" type="radio" readonly disabled class="form-check-input">
+                            <label class="form-check-label">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 py-2 tabla">
+                <textarea disabled asp-for="VIII_e_descripcion" class="form-control" rows="3"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>Subtotal</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <input type="text" readonly disabled class="form-control-plaintext" id="Hsubtotal" value="0">
+            </div>
+        </div>
+        @*-----------------------------------------------------------------------------------------------------------*@
+        <div class="row tituloTabla">
+            <div class="col-lg py-2 tabla d-flex justify-content-around align-items-center">
+                <h5>Puntaje total (100)</h5>
+                <h5>Puntaje obtenido:</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <input type="text" readonly disabled class="form-control-plaintext" id="total" value="0">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>Observaciones adicionales</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <textarea disabled asp-for="DG" class="form-control" rows="5"  ></textarea>
+            </div>
+        </div>
+        @*----------------------------------------------------------------*@
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>Recomendaciones generales para que este sea un proyecto ganador</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <textarea disabled class="form-control" rows="5"  ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>Miembro del CCR (nombre)</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <input class="form-control" type="text" readonly disabled  >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>Fecha</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <input class="form-control" type="date" readonly disabled  >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h5>Firma</h5>
+            </div>
+            <div class="col-lg py-2 tabla">
+                <div class="flex-fill border">
+                    <canvas class="w-100 h-100"></canvas>
                 </div>
             </div>
         </div>
-        <div class="container tabla">
-            <div class="row">
-                <div class="col-lg py-2">
-                    <h3><b>ASPECTOS POR EVALUAR</b></h3>
-                </div>
-            </div>
-            <div class="row tituloTabla">
-                <div class="col-lg py-2 tabla">
-                    <h4><b>I.  Planteamiento del problema</b><br />Cada aspecto vale 2 ptos. Total 10 pts.</h4>
-                </div>
-                <div class="col-lg-2 py-2 tabla">
-                    <h4>Puntos asignados</h4>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <h4>Observaciones</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>a. Define los criterios para la solución propuesta.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="I_a" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="I_a_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>b. Claridad en la definición del problema.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="I_b" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="I_b_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>c.  Identifica el impacto del proyecto.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="I_c" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="I_c_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>d. Los objetivos están bien definidos.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="I_d" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="I_d_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>e. Definición de los criterios que fundamentan la solución propuesta.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="I_e" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="I_e_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>Subtotal</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <input type="text" readonly disabled class="form-control-plaintext" id="Asubtotal" value="0">
-                </div>
-            </div>
-            @*-----------------------------------------------------------------------------------------------------------*@
-            <div class="row tituloTabla">
-                <div class="col-lg py-2 tabla">
-                    <h4><b>II.  Justificación del proyecto</b><br />Cada aspecto vale 3 ptos. Total 18 pts.</h4>
-                </div>
-                <div class="col-lg-3 py-2 tabla">
-                    <h4>Puntos asignados</h4>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <h4>Observaciones</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>a. El proyecto responde a una necesidad evidente.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_a" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="II_a_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>b. Se identifican los grupos beneficiados.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_b" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="II_b_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>c. El proyecto es factible de ser realizado.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_c" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="II_c_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>d. Es aplicable y tiene un buen nivel de uso potencial.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_d" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="II_d_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>e. Realiza un aporte en el campo de estudio.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_e" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="II_e_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>f. Identifica el impacto potencial en el campo de la ciencia, sociedad, economía o el ambiente.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="II_f" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="II_f_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-5 py-2 tabla">
-                    <h5>Subtotal</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <input type="text" readonly disabled class="form-control-plaintext" id="Bsubtotal" value="0">
-                </div>
-            </div>
-            @*-----------------------------------------------------------------------------------------------------------*@
-            <div class="row tituloTabla">
-                <div class="col-lg py-2 tabla">
-                    <h4><b>III.  Originalidad y creatividad del proyecto</b><br />Cada aspecto vale 3 ptos. Total 12 pts.</h4>
-                </div>
-                <div class="col-lg-3 py-2 tabla">
-                    <h4>Puntos asignados</h4>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <h4>Observaciones</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>a. Demuestra que el desarrollo es de elaboración propia.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="III_a" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="III_a_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>b. El proyecto es una innovación y lo demuestra.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="III_b" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="III_b_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>c. Muestra actualidad tecnológica o nuevo conocimiento científico o técnico.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="III_c" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="III_c_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>d. Identifica una solución.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="III_d" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="III_d_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-5 py-2 tabla">
-                    <h5>Subtotal</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <input type="text" readonly disabled class="form-control-plaintext" id="Csubtotal" value="0">
-                </div>
-            </div>
-            @*-----------------------------------------------------------------------------------------------------------*@
-            <div class="row tituloTabla">
-                <div class="col-lg py-2 tabla">
-                    <h4><b>IV.  Marco teórico (Fundamento)</b><br />Cada aspecto vale 2 ptos. Total 10 pts.</h4>
-                </div>
-                <div class="col-lg-2 py-2 tabla">
-                    <h4>Puntos asignados</h4>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <h4>Observaciones</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>a. Demuestra apropiación (familiaridad y capacidad de manejo)  de los contenidos  que fundamentan el proyecto.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="IV_a" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="IV_a_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>b. Define los conceptos que utiliza de manera clara y precisa.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="IV_b" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="IV_b_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>c. Presenta una síntesis apropiada de lo que se conoce del tema en estudio.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="IV_c" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="IV_c_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>d. Presenta diseños y esquemas claros y correctos.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="IV_d" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="IV_d_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>e. Fundamenta todas las demostraciones y cálculos necesarios.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="IV_e" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="IV_e_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>Subtotal</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <input type="text" readonly disabled class="form-control-plaintext" id="Dsubtotal" value="0">
-                </div>
-            </div>
-            @*-----------------------------------------------------------------------------------------------------------*@
-            <div class="row tituloTabla">
-                <div class="col-lg py-2 tabla">
-                    <h4><b>V. Metodología</b><br />Cada aspecto vale 2 ptos. Total 12 pts. </h4>
-                </div>
-                <div class="col-lg-2 py-2 tabla">
-                    <h4>Puntos asignados</h4>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <h4>Observaciones</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>a. Selección de instrumentos (modelos, programas de computación, equipos y otros) y métodos adecuados.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_a" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="V_a_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>b. Describe la metodología utilizada para la obtención de posibles soluciones.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_b" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="V_b_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>c. Cumplimiento de las etapas planificadas en el diseño del proyecto.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_c" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="V_c_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>d. Hace un uso óptimo de los recursos.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_d" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="V_d_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>e. Describe las metodologías de evaluación y perfeccionamiento.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_e" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="V_e_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>f. Identifica posibles puntos de riesgo.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 2; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="V_f" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="V_f_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>Subtotal</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <input type="text" readonly disabled class="form-control-plaintext" id="Esubtotal" value="0">
-                </div>
-            </div>
-            @*-----------------------------------------------------------------------------------------------------------*@
-            <div class="row tituloTabla">
-                <div class="col-lg py-2 tabla">
-                    <h4><b>VI.  Discusión,interpretación y análisis</b><br />Cada aspecto vale 3 ptos. Total 18 pts.</h4>
-                </div>
-                <div class="col-lg-3 py-2 tabla">
-                    <h4>Puntos asignados</h4>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <h4>Observaciones</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>a. Coherencia de los objetivos con los resultados obtenidos.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_a" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VI_a_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>b. Análisis de los resultados.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_b" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VI_b_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>c. Los resultados (o el producto) tienen aplicación o utilidad en la vida real.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_c" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VI_c_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>d. Congruencia de los datos, tablas, diagramas y gráficos con el tema investigado.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_d" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VI_d_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>e. Sugiere posibles aplicaciones del desarrollo obtenido (innovación).</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_e" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VI_e_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>f. Coherencia de los diseños y esquemas con respecto al prototipo/modelo/producto presentado.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VI_f" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VI_f_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-5 py-2 tabla">
-                    <h5>Subtotal</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <input type="text" readonly disabled class="form-control-plaintext" id="Fsubtotal" value="0">
-                </div>
-            </div>
-            @*-----------------------------------------------------------------------------------------------------------*@
-            <div class="row tituloTabla">
-                <div class="col-lg py-2 tabla">
-                    <h4><b>VII.  Informe escrito</b><br />Cada aspecto vale 3 ptos. Total 15 pts.</h4>
-                </div>
-                <div class="col-lg-3 py-2 tabla">
-                    <h4>Puntos asignados</h4>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <h4>Observaciones</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>a. Cumple el formato solicitado según los lineamientos de la Feria Nacional de Ingeniería.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VII_a" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VII_a_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>b. Presenta una organización lógica de ideas (contenido claro y especifico).</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VII_b" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VII_b_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>c. Evidencia que fue elaborado por los estudiantes.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VII_c" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VII_c_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>d. Existe relación de todas y cada una de las partes del informe.</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VII_d" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VII_d_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>e. Brinda toda la información necesaria (diseños, gráficos, esquemas, otros).</h5>
-                </div>
-                <div class="col-lg-3 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 3; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VII_e" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VII_e_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-5 py-2 tabla">
-                    <h5>Subtotal</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <input type="text" readonly disabled class="form-control-plaintext" id="Gsubtotal" value="0">
-                </div>
-            </div>
-            @*-----------------------------------------------------------------------------------------------------------*@
-            <div class="row tituloTabla">
-                <div class="col-lg py-2 tabla">
-                    <h4><b>VIII.  Fuentes bibliográficas</b><br />Cada aspecto vale 1 ptos. Total 5 pts. </h4>
-                </div>
-                <div class="col-lg-2 py-2 tabla">
-                    <h4>Puntos asignados</h4>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <h4>Observaciones</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>a. Utiliza diversas fuentes de información (libros, revistas, Internet, entre otros).</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 1; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VIII_a" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VIII_a_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>b. Presenta bibliografía en cantidad y calidad adecuadas.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 1; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VIII_b" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VIII_b_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>c. Relación de las fuentes bibliográficas con el tema investigado.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 1; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VIII_c" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VIII_c_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>d. Capacidad de comprensión y aplicación de la información de las fuentes consultadas.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 1; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VIII_d" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VIII_d_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>e. Existe coherencia en el formato de todas las referencias.</h5>
-                </div>
-                <div class="col-lg-2 py-2 tabla d-flex flex-column justify-content-around align-items-center">
-                    <h6>Puntos asignados</h6>
-                    <div class="d-flex justify-content-around align-items-center">
-                        @for (int i = 0; i <= 1; i++)
-                        {
-                            <div class="form-check form-check-inline rdbLetras">
-                                <input asp-for="VIII_e" value="@i" type="radio" readonly disabled class="form-check-input">
-                                <label class="form-check-label">@i</label>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-lg-4 py-2 tabla">
-                    <textarea disabled asp-for="VIII_e_descripcion" class="form-control" rows="3"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>Subtotal</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <input type="text" readonly disabled class="form-control-plaintext" id="Hsubtotal" value="0">
-                </div>
-            </div>
-            @*-----------------------------------------------------------------------------------------------------------*@
-            <div class="row tituloTabla">
-                <div class="col-lg py-2 tabla d-flex justify-content-around align-items-center">
-                    <h5>Puntaje total (100)</h5>
-                    <h5>Puntaje obtenido:</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <input type="text" readonly disabled class="form-control-plaintext" id="total" value="0">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>Observaciones adicionales</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <textarea disabled asp-for="DG" class="form-control" rows="5"  ></textarea>
-                </div>
-            </div>
-            @*----------------------------------------------------------------*@
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>Recomendaciones generales para que este sea un proyecto ganador</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <textarea disabled class="form-control" rows="5"  ></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>Miembro del CCR (nombre)</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <input class="form-control" type="text" readonly disabled  >
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>Fecha</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <input class="form-control" type="date" readonly disabled  >
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h5>Firma</h5>
-                </div>
-                <div class="col-lg py-2 tabla">
-                    <div class="flex-fill border">
-                        <canvas class="w-100 h-100"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg py-2 tabla">
-                    <h6><b>Formulario aprobado en sesión del CCR </b></h6>
-                    <h6>Formularios adaptados según criterios de evaluación Intel ISEF, EXPOTEC, Feria Nacional de Ciencia y Tecnología Costa Rica y Feria Nacional de Ingeniería.</h6>
-                </div>
+        <div class="row">
+            <div class="col-lg py-2 tabla">
+                <h6><b>Formulario aprobado en sesión del CCR </b></h6>
+                <h6>Formularios adaptados según criterios de evaluación Intel ISEF, EXPOTEC, Feria Nacional de Ciencia y Tecnología Costa Rica y Feria Nacional de Ingeniería.</h6>
             </div>
         </div>
-        <div class="my-3 d-flex justify-content-center">
-            <button type="submit" class="btn btn-success btn-lg">Enviar Formulario</button>
-        </div>
+    </div>
 
-        <input id="firma" name="firma" type="hidden" />
+    <input id="firma" name="firma" type="hidden" />
 
-        <input asp-for="Id" hidden readonly/>
-    </form>
+    <input asp-for="Id" hidden readonly/>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
@@ -1134,6 +1129,6 @@
     })
 </script>
 
-<footer class="border-top footer text-muted p-3">
+<footer class="border-top footer text-muted p-3 mt-4">
     <a asp-controller="User" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
 </footer>
