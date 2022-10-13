@@ -649,8 +649,10 @@
             <div class="row">
                 <div class="col-lg py-2 tabla">
                     @*AQUI VA LA FIRMA DEL JUEZ*@
-                    <input class="form-control" type="text" placeholder="Escribe aquí">
                     <h5 style="text-align: center;">Firma del juez</h5>
+                    <div class="flex-fill border">
+                        <canvas class="w-100 h-100"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -658,6 +660,37 @@
             <button type="submit" class="btn btn-success btn-lg">Enviar Formulario</button>
         </div>
 
+        <input id="firma" name="firma" type="hidden" />
         <input asp-for="Id" hidden readonly/>
     </form>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous"></script>
+
+<script>
+    const canvas = document.querySelector("canvas");
+
+    function resizeCanvas() {
+        const ratio =  Math.max(window.devicePixelRatio || 1, 1);
+        canvas.width = canvas.offsetWidth * ratio;
+        canvas.height = canvas.offsetHeight * ratio;
+        canvas.getContext("2d").scale(ratio, ratio);
+        signaturePad.clear(); // otherwise isEmpty() might return incorrect value
+    }
+
+    const signaturePad = new SignaturePad(canvas, {
+        backgroundColor: 'rgb(255,255,255)'
+    });
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    $("form").submit(function(){
+        const dataURL = signaturePad.toDataURL("image/png");
+        $("#firma").val(dataURL);
+        debugger;
+    })
+</script>
