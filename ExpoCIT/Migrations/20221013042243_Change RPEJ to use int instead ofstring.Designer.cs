@@ -4,6 +4,7 @@ using ExpoCIT;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExpoCIT.Migrations
 {
     [DbContext(typeof(ExpoContext))]
-    partial class ExpoContextModelSnapshot : ModelSnapshot
+    [Migration("20221013042243_Change RPEJ to use int instead ofstring")]
+    partial class ChangeRPEJtouseintinsteadofstring
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -450,6 +452,7 @@ namespace ExpoCIT.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("DG")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("FechaCreado")
@@ -462,79 +465,79 @@ namespace ExpoCIT.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<int>("III_a")
+                    b.Property<int>("III_12")
                         .HasColumnType("int");
 
-                    b.Property<int>("III_b")
+                    b.Property<int>("III_13")
                         .HasColumnType("int");
 
-                    b.Property<int>("III_c")
+                    b.Property<int>("III_14")
                         .HasColumnType("int");
 
-                    b.Property<int>("III_d")
+                    b.Property<int>("III_15")
                         .HasColumnType("int");
 
-                    b.Property<int>("III_e")
+                    b.Property<int>("III_16")
                         .HasColumnType("int");
 
                     b.Property<int>("III_subtotal")
                         .HasColumnType("int");
 
-                    b.Property<int>("II_a")
+                    b.Property<int>("II_10")
                         .HasColumnType("int");
 
-                    b.Property<int>("II_b")
+                    b.Property<int>("II_11")
                         .HasColumnType("int");
 
-                    b.Property<int>("II_c")
+                    b.Property<int>("II_6")
                         .HasColumnType("int");
 
-                    b.Property<int>("II_d")
+                    b.Property<int>("II_7")
                         .HasColumnType("int");
 
-                    b.Property<int>("II_e")
+                    b.Property<int>("II_8")
                         .HasColumnType("int");
 
-                    b.Property<int>("II_f")
+                    b.Property<int>("II_9")
                         .HasColumnType("int");
 
                     b.Property<int>("II_subtotal")
                         .HasColumnType("int");
 
-                    b.Property<int>("IV_a")
+                    b.Property<int>("IV_17")
                         .HasColumnType("int");
 
-                    b.Property<int>("IV_b")
+                    b.Property<int>("IV_18")
                         .HasColumnType("int");
 
-                    b.Property<int>("IV_c")
+                    b.Property<int>("IV_19")
                         .HasColumnType("int");
 
-                    b.Property<int>("IV_d")
+                    b.Property<int>("IV_20")
                         .HasColumnType("int");
 
-                    b.Property<int>("IV_e")
+                    b.Property<int>("IV_21")
                         .HasColumnType("int");
 
-                    b.Property<int>("IV_f")
+                    b.Property<int>("IV_22")
                         .HasColumnType("int");
 
                     b.Property<int>("IV_subtotal")
                         .HasColumnType("int");
 
-                    b.Property<int>("I_a")
+                    b.Property<int>("I_1")
                         .HasColumnType("int");
 
-                    b.Property<int>("I_b")
+                    b.Property<int>("I_2")
                         .HasColumnType("int");
 
-                    b.Property<int>("I_c")
+                    b.Property<int>("I_3")
                         .HasColumnType("int");
 
-                    b.Property<int>("I_d")
+                    b.Property<int>("I_4")
                         .HasColumnType("int");
 
-                    b.Property<int>("I_e")
+                    b.Property<int>("I_5")
                         .HasColumnType("int");
 
                     b.Property<int>("I_subtotal")
@@ -543,49 +546,49 @@ namespace ExpoCIT.Migrations
                     b.Property<int>("ProyectoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("VII_a")
+                    b.Property<int>("VII_32")
                         .HasColumnType("int");
 
-                    b.Property<int>("VII_b")
+                    b.Property<int>("VII_33")
                         .HasColumnType("int");
 
-                    b.Property<int>("VII_c")
+                    b.Property<int>("VII_34")
                         .HasColumnType("int");
 
-                    b.Property<int>("VII_d")
+                    b.Property<int>("VII_35")
                         .HasColumnType("int");
 
                     b.Property<int>("VII_subtotal")
                         .HasColumnType("int");
 
-                    b.Property<int>("VI_a")
+                    b.Property<int>("VI_28")
                         .HasColumnType("int");
 
-                    b.Property<int>("VI_b")
+                    b.Property<int>("VI_29")
                         .HasColumnType("int");
 
-                    b.Property<int>("VI_c")
+                    b.Property<int>("VI_30")
                         .HasColumnType("int");
 
-                    b.Property<int>("VI_d")
+                    b.Property<int>("VI_31")
                         .HasColumnType("int");
 
                     b.Property<int>("VI_subtotal")
                         .HasColumnType("int");
 
-                    b.Property<int>("V_a")
+                    b.Property<int>("V_23")
                         .HasColumnType("int");
 
-                    b.Property<int>("V_b")
+                    b.Property<int>("V_24")
                         .HasColumnType("int");
 
-                    b.Property<int>("V_c")
+                    b.Property<int>("V_25")
                         .HasColumnType("int");
 
-                    b.Property<int>("V_d")
+                    b.Property<int>("V_26")
                         .HasColumnType("int");
 
-                    b.Property<int>("V_e")
+                    b.Property<int>("V_27")
                         .HasColumnType("int");
 
                     b.Property<int>("V_subtotal")

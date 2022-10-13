@@ -13,6 +13,25 @@ namespace ExpoCIT.Controllers
         private readonly ILogger<JuezController> _logger;
         private readonly ExpoContext _db;
 
+        private bool AuthorizeProjectAccess(int idProyecto)
+        {
+            var claims = User.Identities.First().Claims.ToList();
+
+            int id;
+            int.TryParse(claims?.FirstOrDefault(x => x.Type == "Id")?.Value, out id);
+
+            var juez = _db.Jueces.Include(x => x.Proyectos).First(x => x.Id == id);
+
+            var proyecto = _db.Proyectos.FirstOrDefault(x => x.Id == idProyecto);
+
+            if (proyecto == null || !juez.Proyectos.Contains(proyecto))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public JuezController(ILogger<JuezController> logger, ExpoContext db)
         {
             _logger = logger;
@@ -49,6 +68,9 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormProyectoExpoIngenieria(int idProyecto)
         {
+            if (!AuthorizeProjectAccess(idProyecto))
+                return RedirectToAction("AccessDenied", "Home");
+
             var rubricaProyecto = _db.RPEIs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaProyecto ??= new RPEI();
             rubricaProyecto.Proyecto = _db.Proyectos
@@ -93,6 +115,9 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormTrabajoEscritoExpoIngenieria(int idProyecto)
         {
+            if (!AuthorizeProjectAccess(idProyecto))
+                return RedirectToAction("AccessDenied", "Home");
+
             var rubricaTrabajoEscrito = _db.RTEIs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaTrabajoEscrito ??= new RTEEI();
             rubricaTrabajoEscrito.Proyecto = _db.Proyectos
@@ -151,6 +176,9 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormProyectoExpoJovem(int idProyecto)
         {
+            if (!AuthorizeProjectAccess(idProyecto))
+                return RedirectToAction("AccessDenied", "Home");
+
             var rubricaProyecto = _db.RTEJs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaProyecto ??= new RPEJ();
             rubricaProyecto.Proyecto = _db.Proyectos
@@ -162,17 +190,35 @@ namespace ExpoCIT.Controllers
         }
 
         [HttpPost]
-        public IActionResult FormProyectoExpoJovem(RPEJ rpej)
+        public IActionResult FormProyectoExpoJovem(RPEJ rpej, int idProyecto, string firma)
         {
-            RPEJ? dbRPEJ = _db.RTEJs.Find(rpej.Id);
+            rpej.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
-            if (dbRPEJ == null)
-                return View();
+            rpej.I_subtotal = rpej.I_a + rpej.I_b + rpej.I_c + rpej.I_d + rpej.I_e;
+            rpej.II_subtotal = rpej.II_a + rpej.II_b + rpej.II_c + rpej.II_d + rpej.II_e + rpej.II_f;
+            rpej.III_subtotal = rpej.III_a + rpej.III_b + rpej.III_c + rpej.III_d + rpej.III_e;
+            rpej.IV_subtotal = rpej.IV_a + rpej.IV_b + rpej.IV_c + rpej.IV_d + rpej.IV_e + rpej.IV_f;
+            rpej.V_subtotal = rpej.V_a + rpej.V_b + rpej.V_c + rpej.V_d + rpej.V_e;
+            rpej.VI_subtotal = rpej.VI_a + rpej.VI_b + rpej.VI_c + rpej.VI_d;
+            rpej.VII_subtotal = rpej.VII_a + rpej.VII_b + rpej.VII_c + rpej.VII_d;
 
-            dbRPEJ = rpej;
+            rpej.estado = true;
+
+            var encodedImage = firma.Split(',')[1];
+            var decodedImage = Convert.FromBase64String(encodedImage);
+            rpej.FirmaDigital = decodedImage;
+
+            if (rpej.Id == 0)
+            {
+                _db.RTEJs.Add(rpej);
+            }
+            else
+            {
+                _db.Update(rpej);
+            }
 
             _db.SaveChanges();
-            return View("Index");
+            return RedirectToAction("Index");
         }
     }
 }
