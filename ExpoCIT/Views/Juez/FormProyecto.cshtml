@@ -1193,6 +1193,14 @@
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 
+    @if(Model.FirmaDigital.Length != 0) {
+        var b64 = Convert.ToBase64String(Model.FirmaDigital);
+        string dataURL = $"data:image/png;base64,{b64}";
+        <text>
+            signaturePad.fromDataURL("@Html.Raw(dataURL)");
+        </text>
+    }
+
     $("form").submit(function(){
         const dataURL = signaturePad.toDataURL("image/png");
         $("#firma").val(dataURL);
