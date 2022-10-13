@@ -1,5 +1,7 @@
 ﻿@model ExpoCIT.Models.Juez
-
+@{
+    ViewData["Title"] = "Usuario";
+}
 <div class="container-lg d-flex flex-row flex-sm-row-reverse align-items-center justify-content-between flex-wrap">
     <img class="my-2 imagenHeader" src="~/media/User.svg"/>
     <h2>@User.Identity.Name</h2>
@@ -15,3 +17,12 @@
         <button type="button" class="btn btn-danger btn-lg"><i class="bi bi-person-dash-fill"></i>   Cerrar Sesión</button>
     </form>
 </div>
+
+<footer class="border-top footer text-muted p-3">
+    @if (@User.HasClaim("User","True"))
+    {
+        <a asp-controller="User" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
+    }else{
+        <a asp-controller="Juez" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
+    }   
+</footer>

@@ -1,15 +1,15 @@
 ﻿@model ExpoCIT.Models.Juez
 
 @{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Inicio de Sesión";
 }
-
 <div class="container-sm mt-3">
+    <h2>Inicio de Sesión para Jueces</h2>
     <div class="d-flex flex-column-reverse flex-sm-row flex-wrap-reverse align-items-center justify-content-around">
         <form method="post" class="d-flex flex-column flex-fill" style="max-width: 768px;">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Cedula" class="control-label"></label>
+                <label asp-for="Cedula" class="control-label">Cédula</label>
                 <input asp-for="Cedula" id="cedula" class="form-control" />
                 <span asp-validation-for="Cedula" class="text-danger"></span>
             </div>
