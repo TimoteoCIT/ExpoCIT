@@ -61,7 +61,7 @@
             }
         }
 
-        public string DG { get; set; }
+        public string? DG { get; set; }
 
         public byte[] FirmaDigital { get; set; }
 
