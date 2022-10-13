@@ -13,6 +13,25 @@ namespace ExpoCIT.Controllers
         private readonly ILogger<JuezController> _logger;
         private readonly ExpoContext _db;
 
+        private bool AuthorizeProjectAccess(int idProyecto)
+        {
+            var claims = User.Identities.First().Claims.ToList();
+
+            int id;
+            int.TryParse(claims?.FirstOrDefault(x => x.Type == "Id")?.Value, out id);
+
+            var juez = _db.Jueces.Include(x => x.Proyectos).First(x => x.Id == id);
+
+            var proyecto = _db.Proyectos.FirstOrDefault(x => x.Id == idProyecto);
+
+            if (proyecto == null || !juez.Proyectos.Contains(proyecto))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public JuezController(ILogger<JuezController> logger, ExpoContext db)
         {
             _logger = logger;
@@ -49,6 +68,9 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormProyectoExpoIngenieria(int idProyecto)
         {
+            if (!AuthorizeProjectAccess(idProyecto))
+                return RedirectToAction("AccessDenied", "Home");
+
             var rubricaProyecto = _db.RPEIs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaProyecto ??= new RPEI();
             rubricaProyecto.Proyecto = _db.Proyectos
@@ -93,6 +115,9 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormTrabajoEscritoExpoIngenieria(int idProyecto)
         {
+            if (!AuthorizeProjectAccess(idProyecto))
+                return RedirectToAction("AccessDenied", "Home");
+
             var rubricaTrabajoEscrito = _db.RTEIs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaTrabajoEscrito ??= new RTEEI();
             rubricaTrabajoEscrito.Proyecto = _db.Proyectos
@@ -151,6 +176,9 @@ namespace ExpoCIT.Controllers
 
         public IActionResult FormProyectoExpoJovem(int idProyecto)
         {
+            if (!AuthorizeProjectAccess(idProyecto))
+                return RedirectToAction("AccessDenied", "Home");
+
             var rubricaProyecto = _db.RTEJs.Include(x => x.Proyecto).ThenInclude(x => x.Juez).FirstOrDefault(x => x.Proyecto.Id == idProyecto);
             rubricaProyecto ??= new RPEJ();
             rubricaProyecto.Proyecto = _db.Proyectos
