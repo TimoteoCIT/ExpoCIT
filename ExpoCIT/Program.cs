@@ -7,12 +7,18 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<ExpoContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("EXPODB")));
+if (builder.Environment.IsProduction())
+{
+    builder.Services.AddDbContext<ExpoContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PRODUCCION")));
+} else if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddDbContext<ExpoContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("EXPODB")));
+}
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = "/Home/Index";
+        options.LoginPath = "/Home/LoginJuez";
         options.AccessDeniedPath = "/Home/AccessDenied";
     });
 
@@ -43,5 +49,4 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=LoginJuez}/{id?}");
-
 app.Run();

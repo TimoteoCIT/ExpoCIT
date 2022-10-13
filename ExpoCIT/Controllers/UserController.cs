@@ -1,4 +1,5 @@
 ﻿using ExpoCIT.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -11,6 +12,7 @@ namespace ExpoCIT.Controllers
         public List<Proyecto> GanadoresExpoJovem { get; set; } = new List<Proyecto>();
     }
 
+    [Authorize(Policy = "UserOnly")]
     public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;

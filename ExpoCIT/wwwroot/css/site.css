@@ -56,3 +56,8 @@ body {
     background-color: #30bfa3;
     color: white;
 }
+
+.banner {
+    width: 100%;
+    height: auto;
+}
