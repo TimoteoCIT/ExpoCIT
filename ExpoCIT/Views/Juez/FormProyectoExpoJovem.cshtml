@@ -106,30 +106,12 @@
                     <h5><b>1.	PROPUESTA NUEVA O RENOVADA:</b> El producto o servicio se muestra como una propuesta nueva o renovada del mercado en el que participa.</h5>
                 </div>
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
-                    <div class="form-check form-check-inline rdbLetras">
-                      <input class="form-check-input" type="radio" id="RadioNE" value="NE" name="RDB">
-                      <label class="form-check-label" for="RadioNE">NE</label>
-                    </div>
-                    <div class="form-check form-check-inline rdbLetras">
-                      <input class="form-check-input" type="radio" id="Radio1" value="1" name="RDB">
-                      <label class="form-check-label" for="Radio1">1</label>
-                    </div>
-                    <div class="form-check form-check-inline rdbLetras">
-                      <input class="form-check-input" type="radio" id="Radio2" value="2" name="RDB">
-                      <label class="form-check-label" for="Radio2">2</label>
-                    </div>
-                    <div class="form-check form-check-inline rdbLetras">
-                      <input class="form-check-input" type="radio" id="Radio3" value="3" name="RDB">
-                      <label class="form-check-label" for="Radio1">3</label>
-                    </div>
-                    <div class="form-check form-check-inline rdbLetras">
-                      <input class="form-check-input" type="radio" id="Radio4" value="4" name="RDB">
-                      <label class="form-check-label" for="Radio2">4</label>
-                    </div>
-                    <div class="form-check form-check-inline rdbLetras">
-                      <input class="form-check-input" type="radio" id="Radio5" value="5" name="RDB">
-                      <label class="form-check-label" for="Radio1">5</label>
-                    </div>
+                    @for (int i = 0; i <= 5; i++) {
+                            <div class="form-check form-check-inline rdbLetras">
+                                <input asp-for="I_a" value="@i" type="radio" class="form-check-input">
+                                <label class="form-check-label">@i</label>
+                            </div>
+                        }
                 </div>
             </div>
             <div class="row">
