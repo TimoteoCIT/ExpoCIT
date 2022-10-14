@@ -14,6 +14,7 @@
         public string Nombre { get; set; }
         public string Integrantes { get; set; }
         public TipoProyecto TipoProyecto { get; set; }
+        public string Tutor { get; set; }
         public Juez? Juez { get; set; }
         public RPEI? Rpei { get; set; }
         public RTEEI? Rteei { get; set; }

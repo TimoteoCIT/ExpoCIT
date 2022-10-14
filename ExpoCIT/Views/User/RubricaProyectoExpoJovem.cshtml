@@ -1,4 +1,5 @@
-﻿@{
+﻿@model RPEJ
+@{
     ViewData["Title"] = "ProyectoExpoJovem";
 }
 
@@ -47,7 +48,7 @@
                     <h5>Tutor</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control-plaintext" readonly type="text" placeholder="Escribe aquí">
+                    <input class="form-control-plaintext" readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Tutor">
                 </div>
             </div>
             <div class="row my-2">
