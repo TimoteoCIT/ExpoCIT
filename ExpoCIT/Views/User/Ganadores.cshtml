@@ -1,3 +1,184 @@
 ﻿@model ExpoCIT.Controllers.GanadoresModel
 @{
+    ViewData["Title"] = "Ganadores";
 }
+@{
+    int contador = 0;
+    int contador2 = 0;
+}
+
+<!-- Modal -->
+<div class="modal fade" id="Rubricas" tabindex="-1" aria-labelledby="nameProyecto" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nameProyecto"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form asp-action="VerRubrica" method="post">
+          <div class="modal-body d-flex flex-column flex-md-row justify-content-center justify-content-md-around gap-5">
+                <input type="text" readonly class="form-control-plaintext d-none" id="idProyecto" name="idProyecto">
+                <button class="btn btn-success btn-lg" id="FormProyecto" name="btnPresionado" value="@TipoRubrica.ProyectoExpoIngenieria">Rubrica del Proyecto</button>
+                <button class="btn btn-success btn-lg" id="FormTrabajoEscrito" name="btnPresionado" value="@TipoRubrica.TrabajoEscritoExpoIngenieria">Rubrica del Trabajo Escrito</button>
+                <button class="btn btn-success btn-lg" id="FormProyectoExpoJovem" name="btnPresionado" value="@TipoRubrica.ProyectoExpoJovem">Rubrica del Proyecto</button>
+          </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Main-->
+<div class="container-md my-2">
+    <h2>Ganadores</h2>
+    <div class="row">
+        <div class="col">
+            <div class="container d-none d-lg-block">
+                <div class="row">
+                    <div class="col d-flex justify-content-center align-items-end">
+
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-end">
+                        <h4>@Model.GanadoresExpoJovem[0].Nombre</h4>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-end">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center align-items-end">
+                        <h4>@Model.GanadoresExpoJovem[1].Nombre</h4>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-end podio" style="border-bottom-color: black;">
+                        <img class="premioPodio" src="~/media/PrimerLugar.webp"/>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-end">
+                        <h4>@Model.GanadoresExpoJovem[2].Nombre</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center align-items-center podio" style="border-right-color: black;">
+                        <img class="premioPodio" src="~/media/SegundoLugar.webp"/>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center podio" style="border-top-color: black; border-right-color: black; border-left-color: black; text-align:center;">
+                        <h3>Premios ExpoJovem</h3>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center podio" style="border-left-color: black;">
+                        <img class="premioPodio" src="~/media/TercerLugar.webp"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="container d-none d-lg-block">
+                <div class="row">
+                    <div class="col">
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-end">
+                        <h4>@Model.GanadoresExpoIngenieria[0].Nombre</h4>
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center align-items-end">
+                        <h4>@Model.GanadoresExpoIngenieria[1].Nombre</h4>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-end podio" style="border-bottom-color: black;">
+                        <img class="premioPodio" src="~/media/PrimerLugar.webp"/>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-end">
+                        <h4>@Model.GanadoresExpoIngenieria[2].Nombre</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center align-items-center podio" style="border-right-color: black;">
+                        <img class="premioPodio" src="~/media/SegundoLugar.webp"/>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center podio" style="border-top-color: black; border-right-color: black; border-left-color: black; text-align:center;">
+                        <h3>Premios ExpoIngenería</h3>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center podio" style="border-left-color: black;">
+                        <img class="premioPodio" src="~/media/TercerLugar.webp"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-md mt-2">
+    <h2 class="my-2">ExpoJovem</h2>
+    @foreach (var proyecto in Model.GanadoresExpoJovem)
+    {
+        contador++;
+        <div class="row">
+            <div class="col-md-2 d-flex justify-content-center align-items-center">
+                <img src="~/media/Medalla_@contador .webp"/>
+            </div>
+            <div class="col-md">
+                <div class="card my-4" style="border-radius: 10px;">
+                    <h4 class="card-header">@proyecto.Nombre - @proyecto.TipoProyecto</h4>
+                    <div class="card-body">
+                        <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
+                        <footer class="card-unit">
+                            <p>Integrantes:</p>
+                            @proyecto.Integrantes
+                        </footer>
+                        <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <h2 class="my-2">ExpoIngenería</h2>
+    @foreach (var proyecto in Model.GanadoresExpoIngenieria)
+    {
+        contador2++;
+        <div class="row">
+            <div class="col-md-2 d-flex justify-content-center align-items-center">
+                <img src="~/media/Medalla_@contador .webp"/>
+            </div>
+            <div class="col-md">
+                <div class="card my-4" style="border-radius: 10px;">
+                    <h4 class="card-header">@proyecto.Nombre - @proyecto.TipoProyecto</h4>
+                    <div class="card-body">
+                        <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
+                        <footer class="card-unit">
+                            <p>Integrantes:</p>
+                            @proyecto.Integrantes
+                        </footer>
+                        <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    var RubricasModal = document.getElementById('Rubricas');
+RubricasModal.addEventListener('show.bs.modal', function(event) {
+    var button = event.relatedTarget;
+    var id = button.getAttribute('data-bs-id');
+    var name = button.getAttribute('data-bs-name');
+    var tipo = button.getAttribute('data-bs-tipo');
+    RubricasModal.querySelector('.modal-body #idProyecto').value = id;
+    RubricasModal.querySelector('.modal-header #nameProyecto').innerHTML = "Rubricas del proyecto " + name;
+    if (tipo == "ExpoJovem") {
+        document.getElementById("FormTrabajoEscrito").style.display = "none";
+        document.getElementById("FormProyecto").style.display = "none";
+        document.getElementById("FormProyectoExpoJovem").style.display = "inline";
+    } else {
+        document.getElementById("FormTrabajoEscrito").style.display = "inline";
+        document.getElementById("FormProyecto").style.display = "inline";
+        document.getElementById("FormProyectoExpoJovem").style.display = "none";
+    }
+})
+</script>
+
+<footer class="border-top footer text-muted p-3 mt-4">
+    <a asp-controller="User" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
+</footer>

@@ -61,3 +61,16 @@ body {
     width: 100%;
     height: auto;
 }
+
+.podio {
+    background-color: black;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    border: solid gold 2px;
+}
+
+.premioPodio {
+    height: auto;
+    width: 40%;
+}

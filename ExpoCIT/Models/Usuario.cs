@@ -7,7 +7,7 @@ namespace ExpoCIT.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Porfavor ingresar el username.")]
+        [Required(ErrorMessage = "Porfavor ingresar el nombre de usuario.")]
         public string Username { get; set; }
 
         [Required(ErrorMessage = "Porfavor ingresar la contraseña.")]

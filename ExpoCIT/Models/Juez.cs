@@ -6,8 +6,8 @@ namespace ExpoCIT.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Porfavor ingresar la cedula.")]
-        [RegularExpression(@"^[1-9]-\d{4}-\d{4}", ErrorMessage = "Formato de cedula debe ser x-xxxx-xxxx")]
+        [Required(ErrorMessage = "Porfavor ingresar la cédula.")]
+        [RegularExpression(@"^[1-9]-\d{4}-\d{4}", ErrorMessage = "Formato de cédula debe ser x-xxxx-xxxx")]
         public string Cedula { get; set; }
 
         [Required(ErrorMessage = "Porfavor ingresar la contraseña.")]
