@@ -96,6 +96,8 @@ namespace ExpoCIT.Controllers
             rpei.VIII_subtotal = rpei.VIII_a + rpei.VIII_b + rpei.VIII_c + rpei.VIII_d;
 
             rpei.estado = true;
+            if (rpei.Proyecto.Rteei != null)
+                rpei.Proyecto.estado = true;
 
             var encodedImage = firma.Split(',')[1];
             var decodedImage = Convert.FromBase64String(encodedImage);
@@ -157,6 +159,8 @@ namespace ExpoCIT.Controllers
             rteei.P_13 = "";
 
             rteei.estado = true;
+            if (rteei.Proyecto.Rpei != null)
+                rteei.Proyecto.estado = true;
 
             var encodedImage = firma.Split(',')[1];
             var decodedImage = Convert.FromBase64String(encodedImage);
@@ -203,6 +207,7 @@ namespace ExpoCIT.Controllers
             rpej.VII_subtotal = rpej.VII_a + rpej.VII_b + rpej.VII_c + rpej.VII_d;
 
             rpej.estado = true;
+            rpej.Proyecto.estado = true;
 
             var encodedImage = firma.Split(',')[1];
             var decodedImage = Convert.FromBase64String(encodedImage);
