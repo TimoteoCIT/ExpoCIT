@@ -28,19 +28,52 @@
 
 <h2 class="m-3">Proyectos de ExpoJovem</h2>
 <div class="container-lg">
+    <div class="d-flex justify-content-center justify-content-md-start">
+        <h2 class="my-2">Proyectos revisados</h2>
+    </div>
     @foreach (var proyecto in Model)
     {
-        <div class="card my-4" style="border-radius: 10px;">
-            <h4 class="card-header">@proyecto.Nombre - @proyecto.TipoProyecto</h4>
-            <div class="card-body">
-                <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
-                <footer class="card-unit">
-                    <p>Integrantes:</p>
-                    @proyecto.Integrantes
-                </footer>
-                <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto" >Ver Rubricas </button>
+        if (proyecto.estado)
+        {
+            <div class="card my-4" style="border-radius: 10px;">
+                <div class="card-header d-flex justify-content-between">
+                    <h4>@proyecto.Nombre - @proyecto.TipoProyecto</h4>
+                    <h4 style="color: Green;">Revisado</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
+                    <footer class="card-unit">
+                        <p>Integrantes:</p>
+                        @proyecto.Integrantes
+                    </footer>
+                    <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
+                </div>
             </div>
-        </div>
+        }
+    }
+
+    <div class="d-flex justify-content-center justify-content-md-start">
+        <h2 class="my-2">Proyectos Sin Revisar</h2>
+    </div>
+    @foreach (var proyecto in Model)
+    {
+        if (!proyecto.estado)
+        {
+            <div class="card my-4" style="border-radius: 10px; background-color: #e0dede;">
+                <div class="card-header d-flex justify-content-between">
+                    <h4>@proyecto.Nombre - @proyecto.TipoProyecto</h4>
+                    <h4 style="color: Red;">No Revisado</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
+                    <footer class="card-unit">
+                        <p>Integrantes:</p>
+                        @proyecto.Integrantes
+                    </footer>
+                    <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
+                </div>
+            </div>
+        }
     }
 </div>
 
@@ -65,6 +98,6 @@ RubricasModal.addEventListener('show.bs.modal', function(event) {
 });
 </script>
 
-<footer class="fixed-bottom border-top footer text-muted p-3 mt-4">
+<footer class="fixed-bottom p-3 mt-4">
     <a asp-controller="User" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
 </footer>

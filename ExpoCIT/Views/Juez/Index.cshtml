@@ -34,17 +34,23 @@
     @if (Model.Proyectos != null) {
         @foreach (var proyecto in Model.Proyectos)
         {
-            <div class="card my-4" style="border-radius: 10px;">
-                <h4 class="card-header">@proyecto.Nombre - @proyecto.TipoProyecto</h4>
-                <div class="card-body">
-                    <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
-                    <footer class="card-unit">
-                        <p>Integrantes:</p>
-                        @proyecto.Integrantes
-                    </footer>
-                    <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
+            if (!proyecto.estado)
+            {
+                <div class="card my-4" style="border-radius: 10px;">
+                    <div class="card-header d-flex justify-content-between">
+                        <h4>@proyecto.Nombre - @proyecto.TipoProyecto</h4>
+                        <h4 style="color: Red;">No Revisado</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
+                        <footer class="card-unit">
+                            <p>Integrantes:</p>
+                            @proyecto.Integrantes
+                        </footer>
+                        <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
+                    </div>
                 </div>
-            </div>
+            }
         }
     } else {
         <h2 style="color: red">No tiene ningun proyecto asignado</h2>
@@ -52,7 +58,30 @@
     <div class="d-flex justify-content-center justify-content-md-start">
         <h2 class="my-2">Proyectos revisados</h2>
     </div>
-    @*Proyectos que salgan desabilitados*@
+    @if (Model.Proyectos != null) {
+        @foreach (var proyecto in Model.Proyectos)
+        {
+            if (proyecto.estado)
+            {
+                <div class="card my-4" style="border-radius: 10px; background-color: #e0dede;">
+                    <div class="card-header d-flex justify-content-between">
+                        <h4>@proyecto.Nombre - @proyecto.TipoProyecto</h4>
+                        <h4 style="color: Green;">Revisado</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Numero de Stand: @proyecto.NumStand</p>
+                        <footer class="card-unit">
+                            <p>Integrantes:</p>
+                            @proyecto.Integrantes
+                        </footer>
+                        <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
+                    </div>
+                </div>
+            }
+        }
+    } else {
+        <h2 style="color: red">No tiene ningun proyecto asignado</h2>
+    }
 </div>
 
 
