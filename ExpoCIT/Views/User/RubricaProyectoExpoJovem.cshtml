@@ -1,3 +1,4 @@
+﻿@model RPEJ
 ﻿@{
     ViewData["Title"] = "RubricaProyectoExpoJovem";
 }
@@ -26,12 +27,21 @@
             <div class="col-lg">
                 <input class="form-control-plaintext" readonly type="text" placeholder="Escribe aquí">  
             </div>
+        </div>
+        <div class="row my-2">
             <div class="col-lg-auto">
-                <h5>Proyecto Nº</h5>
+                <h5>Tutor</h5>
             </div>
             <div class="col-lg">
-                <input class="form-control-plaintext" readonly type="number" min="0" placeholder="Escribe aquí">  
+                <input class="form-control-plaintext" readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Tutor">
             </div>
+        </div>
+        <div class="col-lg-auto">
+            <h5>Proyecto Nº</h5>
+        </div>
+        <div class="col-lg">
+            <input class="form-control-plaintext" readonly type="number" min="0" placeholder="Escribe aquí">  
+        </div>
         </div>
         <div class="row my-2">
             <div class="col-lg-auto">

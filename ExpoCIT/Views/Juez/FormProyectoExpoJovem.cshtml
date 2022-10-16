@@ -56,7 +56,7 @@
                     <h5>Tutor</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" readonly type="text" placeholder="Escribe aquí">
+                    <input class="form-control" type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Tutor">
                 </div>
             </div>
             <div class="row my-2">
@@ -651,7 +651,7 @@
             <div class="row">
                 <div class="col-lg py-2 tabla">
                     <h5 style="text-align: center;">Observaciones Generales</h5>
-                    <textarea class="form-control" rows="10"></textarea>
+                    <textarea asp-for="DG" class="form-control" rows="10"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -707,6 +707,14 @@
 
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
+
+    @if(Model.FirmaDigital.Length != 0) {
+        var b64 = Convert.ToBase64String(Model.FirmaDigital);
+        string dataURL = $"data:image/png;base64,{b64}";
+        <text>
+            signaturePad.fromDataURL("@Html.Raw(dataURL)");
+        </text>
+    }
 
     $("form").submit(function(){
         const dataURL = signaturePad.toDataURL("image/png");
