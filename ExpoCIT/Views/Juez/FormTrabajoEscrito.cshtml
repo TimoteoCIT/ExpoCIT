@@ -17,7 +17,7 @@
                     <h5>ID:</h5>
                 </div>
                 <div class="col-lg py-2">
-                    <input type="text" readonly class="form-control-plaintext"> @*AUTORELLENAR CON ID*@
+                    <input type="text" readonly class="form-control-plaintext fw-bold"> @*AUTORELLENAR CON ID*@
                 </div>
             </div>
             <div class="row d-flex align-items-baseline">
@@ -25,7 +25,7 @@
                     <h5>Nombre del proyecto:</h5>
                 </div>
                 <div class="col-lg py-2">
-                    <input type="text" readonly class="form-control-plaintext" value="@Model.Proyecto.Nombre">
+                    <input type="text" readonly class="form-control-plaintext fw-bold" value="@Model.Proyecto.Nombre">
                 </div>
             </div>
             <div class="row d-flex align-items-baseline">
@@ -33,7 +33,7 @@
                     <h5>Nombre de los estudiantes:</h5>
                 </div>
                 <div class="col-lg py-2">
-                    <textarea readonly class="form-control-plaintext" rows="4" value="@Model.Proyecto.Integrantes"></textarea>
+                    <textarea readonly class="form-control-plaintext fw-bold" rows="4" value="@Model.Proyecto.Integrantes"></textarea>
                 </div>
             </div>
         </div>
@@ -1158,6 +1158,6 @@
     })
 </script>
 
-<footer class="border-top footer text-muted p-3 mt-4">
+<footer class="fixed-bottom border-top footer text-muted p-3 mt-4">
     <a asp-controller="Juez" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
 </footer>

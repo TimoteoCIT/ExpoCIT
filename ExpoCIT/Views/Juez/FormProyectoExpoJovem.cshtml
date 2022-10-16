@@ -56,7 +56,7 @@
                     <h5>Tutor</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Tutor">
+                    <input class="form-control" readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Tutor">
                 </div>
             </div>
             <div class="row my-2">
@@ -673,7 +673,7 @@
     </form>
 </div>
 
-<footer class="border-top footer text-muted p-3 mt-4">
+<footer class="fixed-bottom border-top footer text-muted p-3">
     <a asp-controller="Juez" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
 </footer>
 

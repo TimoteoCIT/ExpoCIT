@@ -123,5 +123,11 @@ namespace ExpoCIT.Controllers
 
             return View(usuario);
         }
+
+        public IActionResult Informacion()
+        {
+            return View();
+        }
+
     }
 }
