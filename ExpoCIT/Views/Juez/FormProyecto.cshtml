@@ -14,10 +14,10 @@
         <div class="container">
             <div class="row d-flex align-items-baseline">
                 <div class="col-lg-auto py-2">
-                    <h5>Código:</h5>
+                    <h5>ID:</h5>
                 </div>
                 <div class="col-lg py-2">
-                    <input type="text" readonly class="form-control-plaintext" value="@Model.Proyecto.Id">
+                    <input type="text" readonly class="form-control-plaintext fw-bold" value="@Model.Proyecto.Id">
                 </div>
             </div>
             <div class="row d-flex align-items-baseline">
@@ -25,7 +25,7 @@
                     <h5>Nombre del proyecto:</h5>
                 </div>
                 <div class="col-lg py-2">
-                    <input type="text" readonly class="form-control-plaintext" value="@Model.Proyecto.Nombre" />
+                    <input type="text" readonly class="form-control-plaintext fw-bold" value="@Model.Proyecto.Nombre" />
                 </div>
             </div>
             <div class="row d-flex align-items-baseline">
@@ -33,7 +33,7 @@
                     <h5>Nombre de los estudiantes:</h5>
                 </div>
                 <div class="col-lg py-2">
-                    <textarea readonly class="form-control-plaintext" rows="4">@Model.Proyecto.Integrantes</textarea>
+                    <textarea readonly class="form-control-plaintext fw-bold" rows="4">@Model.Proyecto.Integrantes</textarea>
                 </div>
             </div>
         </div>
@@ -1151,8 +1151,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg py-2 tabla">
+                <div class="col-lg py-2 tabla d-flex flex-row flex-lg-column align-items-baseline justify-content-around justify-content-lg-start">
                     <h5>Firma del juez</h5>
+                    <button type="button" class="btn btn-danger mx-2 mt-0 mt-lg-auto mb-2">Limpiar Firma</button>
                 </div>
                 <div class="col-lg py-2 tabla d-flex">
                     <div class="flex-fill border">
@@ -1217,6 +1218,6 @@
     })
 </script>
 
-<footer class="border-top footer text-muted p-3 mt-4">
+<footer class="fixed-bottom p-3 mt-4">
     <a asp-controller="Juez" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
 </footer>
