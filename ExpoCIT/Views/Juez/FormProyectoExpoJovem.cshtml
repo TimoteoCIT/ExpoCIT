@@ -13,12 +13,20 @@
     <h2 class="mb-5">Evaluación de proyectos Expojovem</h2>
     <form method="post">
         <div class="container">
+            <div class="row d-flex align-items-baseline">
+                <div class="col-lg-auto py-2">
+                    <h5>ID:</h5>
+                </div>
+                <div class="col-lg py-2">
+                    <input type="text" readonly class="form-control-plaintext" value="@Model.Proyecto.Id">
+                </div>
+            </div>
             <div class="row my-2">
                 <div class="col-lg-auto">
                     <h5>Institución</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" type="text" placeholder="Escribe aquí" value="Colegio Tecnico Profesional CIT">
+                    <input class="form-control" readonly type="text" placeholder="Escribe aquí" value="Colegio Tecnico Profesional CIT">
                 </div>
             </div>
             <div class="row my-2">
@@ -26,13 +34,13 @@
                     <h5>Nombre del Proyecto</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Nombre">
+                    <input class="form-control" readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Nombre">
                 </div>
                 <div class="col-lg-auto">
                     <h5>Proyecto Nº</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" type="number" min="0" placeholder="Escribe aquí" value="@Model.Proyecto.NumStand">
+                    <input class="form-control" readonly type="number" min="0" placeholder="Escribe aquí" value="@Model.Proyecto.NumStand">
                 </div>
             </div>
             <div class="row my-2">
@@ -40,7 +48,7 @@
                     <h5>Expositores</h5>
                 </div>
                 <div class="col-lg">
-                    <textarea class="form-control" rows="5">@Model.Proyecto.Integrantes</textarea>
+                    <textarea class="form-control" readonly rows="5">@Model.Proyecto.Integrantes</textarea>
                 </div>
             </div>
             <div class="row my-2">
@@ -48,7 +56,7 @@
                     <h5>Tutor</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Tutor">
+                    <input class="form-control" readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Tutor">
                 </div>
             </div>
             <div class="row my-2">
@@ -56,7 +64,7 @@
                     <h5>Nombre del juez</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Juez?.Nombre">
+                    <input class="form-control" readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Juez?.Nombre">
                 </div>
             </div>
             <div class="row my-2">
@@ -64,7 +72,7 @@
                     <h5>Número de cédula del juez</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" id="cedula" type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Juez?.Cedula">
+                    <input class="form-control" readonly id="cedula" type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Juez?.Cedula">
                 </div>
             </div>
             <div class="row my-2">
@@ -72,15 +80,7 @@
                     <h5>Fecha de la evaluación</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" type="date" placeholder="Escribe aquí">
-                </div>
-            </div>
-            <div class="row my-2">
-                <div class="col-lg-auto">
-                    <h5>Digitado por</h5>
-                </div>
-                <div class="col-lg">
-                    <textarea class="form-control" rows="3"></textarea>
+                    <input class="form-control" readonly type="date" placeholder="Escribe aquí">
                 </div>
             </div>
         </div>
@@ -653,6 +653,7 @@
                     <div class="flex-fill border">
                         <canvas class="w-100 h-100"></canvas>
                     </div>
+                    <button type="button" class="btn btn-danger mx-2 my-2">Limpiar Firma</button>
                 </div>
             </div>
         </div>
@@ -665,7 +666,7 @@
     </form>
 </div>
 
-<footer class="border-top footer text-muted p-3 mt-4">
+<footer class="fixed-bottom p-3">
     <a asp-controller="Juez" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
 </footer>
 
