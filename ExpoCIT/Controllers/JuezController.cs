@@ -84,7 +84,7 @@ namespace ExpoCIT.Controllers
         [HttpPost]
         public IActionResult FormProyectoExpoIngenieria(RPEI rpei, int idProyecto, string firma)
         {
-            rpei.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
+            rpei.Proyecto = _db.Proyectos.Include(x => x.Rteei).FirstOrDefault(x => x.Id == idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
             rpei.I_subtotal = rpei.I_a + rpei.I_b + rpei.I_c + rpei.I_d + rpei.I_e;
             rpei.II_subtotal = rpei.II_a + rpei.II_b + rpei.II_c + rpei.II_d + rpei.II_e + rpei.II_f;
@@ -96,7 +96,7 @@ namespace ExpoCIT.Controllers
             rpei.VIII_subtotal = rpei.VIII_a + rpei.VIII_b + rpei.VIII_c + rpei.VIII_d;
 
             rpei.estado = true;
-            if (rpei.Proyecto.Rteei != null)
+            if (rpei.Proyecto.Rteei != null && rpei.Proyecto.Rteei.estado == true)
                 rpei.Proyecto.estado = true;
 
             var encodedImage = firma.Split(',')[1];
@@ -133,7 +133,7 @@ namespace ExpoCIT.Controllers
         [HttpPost]
         public IActionResult FormTrabajoEscritoExpoIngenieria(RTEEI rteei, int idProyecto, string firma)
         {
-            rteei.Proyecto = _db.Proyectos.Find(idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
+            rteei.Proyecto = _db.Proyectos.Include(x => x.Rpei).FirstOrDefault(x => x.Id == idProyecto) ?? throw new InvalidOperationException("Deberia ser imposible que el id del proyecto no exista");
 
             rteei.I_subtotal = rteei.I_a + rteei.I_b + rteei.I_c + rteei.I_d + rteei.I_e;
             rteei.II_subtotal = rteei.II_a + rteei.II_b + rteei.II_c + rteei.II_d + rteei.II_e + rteei.II_f;
@@ -159,7 +159,7 @@ namespace ExpoCIT.Controllers
             rteei.P_13 = "";
 
             rteei.estado = true;
-            if (rteei.Proyecto.Rpei != null)
+            if (rteei.Proyecto.Rpei != null && rteei.Proyecto.Rpei.estado == true)
                 rteei.Proyecto.estado = true;
 
             var encodedImage = firma.Split(',')[1];
