@@ -1156,6 +1156,8 @@
         signaturePad.clear();
     })
 
+    $("[type='date']")[0].valueAsDate = new Date();
+
     $("form").submit(function(){
         const dataURL = signaturePad.toDataURL("image/png");
         $("#firma").val(dataURL);
