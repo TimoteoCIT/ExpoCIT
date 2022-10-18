@@ -648,12 +648,11 @@
             </div>
             <div class="row">
                 <div class="col-lg py-2 tabla">
-                    @*AQUI VA LA FIRMA DEL JUEZ*@
                     <h5 style="text-align: center;">Firma del juez</h5>
                     <div class="flex-fill border">
                         <canvas class="w-100 h-100"></canvas>
                     </div>
-                    <button type="button" class="btn btn-danger mx-2 my-2">Limpiar Firma</button>
+                    <button id="limpiar" type="button" class="btn btn-danger mx-2 my-2">Limpiar Firma</button>
                 </div>
             </div>
         </div>
@@ -708,6 +707,10 @@
             signaturePad.fromDataURL("@Html.Raw(dataURL)");
         </text>
     }
+
+    $("#limpiar").click(function(){
+        signaturePad.clear();
+    })
 
     $("form").submit(function(){
         const dataURL = signaturePad.toDataURL("image/png");
