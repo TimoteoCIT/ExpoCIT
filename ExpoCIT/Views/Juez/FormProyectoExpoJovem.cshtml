@@ -710,7 +710,7 @@
 
     $("#limpiar").click(function(){
         signaturePad.clear();
-    })
+    });
 
     $("[type='date']")[0].valueAsDate = new Date();
 
@@ -718,5 +718,5 @@
         const dataURL = signaturePad.toDataURL("image/png");
         $("#firma").val(dataURL);
         debugger;
-    })
+    });
 </script>
