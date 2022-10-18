@@ -107,7 +107,7 @@ namespace ExpoCIT.Controllers
                     .Include(x => x.Rteei).ToList()
                     .FindAll(x => x.TipoProyecto == TipoProyecto.ExpoIngenieria)
                     .FindAll(x => x.estado == true)
-                    .OrderBy(x => (x.Rteei?.Total + x.Rpei?.Total) / 2f)
+                    .OrderByDescending(x => (x.Rteei?.Total + x.Rpei?.Total) / 2f)
                     .ThenBy(x => x.Nombre)
                     .Take(3)
                     .ToList(),
@@ -115,7 +115,7 @@ namespace ExpoCIT.Controllers
                     .Include(x => x.Rpej).ToList()
                     .FindAll(x => x.TipoProyecto == TipoProyecto.ExpoJovem)
                     .FindAll(x => x.estado == true)
-                    .OrderBy(x => x.Rpej?.Total)
+                    .OrderByDescending(x => x.Rpej?.Total)
                     .ThenBy(x => x.Nombre)
                     .Take(3)
                     .ToList()
