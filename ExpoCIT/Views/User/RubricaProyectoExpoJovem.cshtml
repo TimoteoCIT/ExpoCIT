@@ -703,6 +703,8 @@
         </text>
     }
 
+    signaturePad.off();
+
     $("form").submit(function(){
         const dataURL = signaturePad.toDataURL("image/png");
         $("#firma").val(dataURL);
