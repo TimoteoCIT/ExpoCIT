@@ -25,7 +25,10 @@ namespace ExpoCIT
                 var auditableEntity = insertedEntry as Auditable;
 
                 if (auditableEntity != null)
+                {
                     auditableEntity.FechaCreado = DateTime.Now;
+                    auditableEntity.FechaModificado = DateTime.Now;
+                }
             }
 
             var modifiedEntries = this.ChangeTracker.Entries()
