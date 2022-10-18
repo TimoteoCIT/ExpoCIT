@@ -1145,7 +1145,7 @@
                 <h5>Fecha</h5>
             </div>
             <div class="col-lg py-2 tabla">
-                <input class="form-control" readonly disabled type="date"  >
+                <input asp-for="FechaModificado" class="form-control" readonly disabled type="date"  >
             </div>
         </div>
         <div class="row">
@@ -1196,11 +1196,13 @@
         </text>
     }
 
+    signaturePad.off();
+
     $("form").submit(function(){
         const dataURL = signaturePad.toDataURL("image/png");
         $("#firma").val(dataURL);
         debugger;
-    })
+    });
 </script>
 
 <footer class="fixed-bottom p-3">
