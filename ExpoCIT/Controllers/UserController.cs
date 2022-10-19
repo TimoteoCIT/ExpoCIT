@@ -106,14 +106,16 @@ namespace ExpoCIT.Controllers
                     .Include(x => x.Rpei)
                     .Include(x => x.Rteei).ToList()
                     .FindAll(x => x.TipoProyecto == TipoProyecto.ExpoIngenieria)
-                    .OrderBy(x => (x.Rteei?.Total + x.Rpei?.Total) / 2f)
+                    .FindAll(x => x.estado == true)
+                    .OrderByDescending(x => (x.Rteei?.Total + x.Rpei?.Total) / 2f)
                     .ThenBy(x => x.Nombre)
                     .Take(3)
                     .ToList(),
                 GanadoresExpoJovem = _db.Proyectos
                     .Include(x => x.Rpej).ToList()
                     .FindAll(x => x.TipoProyecto == TipoProyecto.ExpoJovem)
-                    .OrderBy(x => x.Rpej?.Total)
+                    .FindAll(x => x.estado == true)
+                    .OrderByDescending(x => x.Rpej?.Total)
                     .ThenBy(x => x.Nombre)
                     .Take(3)
                     .ToList()
