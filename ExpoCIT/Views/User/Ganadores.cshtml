@@ -41,7 +41,7 @@
 
                     </div>
                     <div class="col d-flex justify-content-center align-items-end">
-                        @if(Model.GanadoresExpoIngenieria.Count >= 1){
+                        @if(Model.GanadoresExpoJovem.Count >= 1){
                             <h4 style="text-shadow: 0px 0px 3px #FFF400;"><b>@Model.GanadoresExpoJovem[0].Nombre</b></h4>
                         }
                     </div>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="row">
                     <div class="col d-flex justify-content-center align-items-end">
-                        @if (Model.GanadoresExpoIngenieria.Count >= 2){
+                        @if (Model.GanadoresExpoJovem.Count >= 2){
                             <h4 style="text-shadow: 0px 0px 3px #FFF400;"><b>@Model.GanadoresExpoJovem[1].Nombre</b></h4>
                         }
                     </div>
@@ -59,7 +59,7 @@
                         <img class="premioPodio" src="~/media/PrimerLugar.webp"/>
                     </div>
                     <div class="col d-flex justify-content-center align-items-end">
-                        @if (Model.GanadoresExpoIngenieria.Count >= 2){
+                        @if (Model.GanadoresExpoJovem.Count >= 3){
                             <h4 style="text-shadow: 0px 0px 3px #FFF400;"><b>@Model.GanadoresExpoJovem[2].Nombre</b></h4>
                         }
                     </div>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="col d-flex justify-content-center align-items-end">
                         @if(Model.GanadoresExpoIngenieria.Count >= 1){
-                            <h4 style="text-shadow: 0px 0px 3px #FFF400;"><b>@Model.GanadoresExpoJovem[0].Nombre</b></h4>
+                            <h4 style="text-shadow: 0px 0px 3px #FFF400;"><b>@Model.GanadoresExpoIngenieria[0].Nombre</b></h4>
                         }
                     </div>
                     <div class="col">
@@ -93,7 +93,7 @@
                 <div class="row">
                     <div class="col d-flex justify-content-center align-items-end">
                         @if(Model.GanadoresExpoIngenieria.Count >= 2){
-                            <h4 style="text-shadow: 0px 0px 3px #FFF400;"><b>@Model.GanadoresExpoJovem[1].Nombre</b></h4>
+                            <h4 style="text-shadow: 0px 0px 3px #FFF400;"><b>@Model.GanadoresExpoIngenieria[1].Nombre</b></h4>
                         }
                     </div>
                     <div class="col d-flex justify-content-center align-items-end podio" style="border-bottom-color: black;">
@@ -101,7 +101,7 @@
                     </div>
                     <div class="col d-flex justify-content-center align-items-end">
                         @if (Model.GanadoresExpoIngenieria.Count >= 3){
-                            <h4 style="text-shadow: 0px 0px 3px #FFF400;"><b>@Model.GanadoresExpoJovem[2].Nombre</b></h4>
+                            <h4 style="text-shadow: 0px 0px 3px #FFF400;"><b>@Model.GanadoresExpoIngenieria[2].Nombre</b></h4>
                         }
                     </div>
                 </div>
@@ -139,8 +139,8 @@
                             @proyecto.Integrantes
                         </footer>
                         <div>
+                            <h4 style="text-shadow: 0px 0px 3px #FFF400;">Puntaje Obtenido: @proyecto.Rpej.Total</h4>
                             <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
-                            <h3 style="color: gold;">Puntaje Obtenido: @proyecto.Rpej.Total</h3>
                         </div>
                     </div>
                 </div>
@@ -166,11 +166,11 @@
                             @proyecto.Integrantes
                         </footer>
                         <div>
-                            <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
                             @{
                                 int Total = proyecto.Rpei.Total + proyecto.Rteei.Total;
                             }
-                            <h3 style="color: gold;">Puntaje Obtenido: @Total</h3>
+                            <h3 style="text-shadow: 0px 0px 3px #FFF400;">Puntaje Obtenido: @Total</h3>
+                            <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#Rubricas" data-bs-id="@proyecto.Id" data-bs-name="@proyecto.Nombre" data-bs-tipo="@proyecto.TipoProyecto">Ver Rubricas </button>
                         </div>
                     </div>
                 </div>
@@ -200,6 +200,6 @@ RubricasModal.addEventListener('show.bs.modal', function(event) {
 })
 </script>
 
-<footer class="fixed-bottom border-top footer text-muted p-3">
+<footer class="fixed-bottom p-3">
     <a asp-controller="User" asp-action="Index" class="btn btn-secondary align-items-center"><h3><i class="bi bi-arrow-return-left me-3"></i>Volver a Inicio</h3></a>
 </footer>
