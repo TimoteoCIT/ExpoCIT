@@ -26,7 +26,7 @@
                     <h5>Institución</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" readonly type="text" placeholder="Escribe aquí" value="Colegio Tecnico Profesional CIT">
+                    <input class="form-control" required readonly type="text" placeholder="Escribe aquí" value="Colegio Tecnico Profesional CIT">
                 </div>
             </div>
             <div class="row my-2">
@@ -34,13 +34,13 @@
                     <h5>Nombre del Proyecto</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Nombre">
+                    <input class="form-control" required readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Nombre">
                 </div>
                 <div class="col-lg-auto">
                     <h5>Proyecto Nº</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" readonly type="number" min="0" placeholder="Escribe aquí" value="@Model.Proyecto.NumStand">
+                    <input class="form-control" required readonly type="number" min="0" placeholder="Escribe aquí" value="@Model.Proyecto.NumStand">
                 </div>
             </div>
             <div class="row my-2">
@@ -48,7 +48,7 @@
                     <h5>Expositores</h5>
                 </div>
                 <div class="col-lg">
-                    <textarea class="form-control" readonly rows="5">@Model.Proyecto.Integrantes</textarea>
+                    <textarea class="form-control" required readonly rows="5">@Model.Proyecto.Integrantes</textarea>
                 </div>
             </div>
             <div class="row my-2">
@@ -56,7 +56,7 @@
                     <h5>Tutor</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Tutor">
+                    <input class="form-control" required readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Tutor">
                 </div>
             </div>
             <div class="row my-2">
@@ -64,7 +64,7 @@
                     <h5>Nombre del juez</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Juez?.Nombre">
+                    <input class="form-control" required readonly type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Juez?.Nombre">
                 </div>
             </div>
             <div class="row my-2">
@@ -72,7 +72,7 @@
                     <h5>Número de cédula del juez</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" readonly id="cedula" type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Juez?.Cedula">
+                    <input class="form-control" required readonly id="cedula" type="text" placeholder="Escribe aquí" value="@Model.Proyecto.Juez?.Cedula">
                 </div>
             </div>
             <div class="row my-2">
@@ -80,7 +80,7 @@
                     <h5>Fecha de la evaluación</h5>
                 </div>
                 <div class="col-lg">
-                    <input class="form-control" readonly type="date" placeholder="Escribe aquí">
+                    <input class="form-control" required readonly type="date" placeholder="Escribe aquí">
                 </div>
             </div>
         </div>
@@ -108,7 +108,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="I_a" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="I_a" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -121,7 +121,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="I_b" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="I_b" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -134,7 +134,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="I_c" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="I_c" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -147,7 +147,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="I_d" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="I_d" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -160,7 +160,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="I_e" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="I_e" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -187,7 +187,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="II_a" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="II_a" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -200,7 +200,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="II_b" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="II_b" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -213,7 +213,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="II_c" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="II_c" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -226,7 +226,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="II_d" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="II_d" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -239,7 +239,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="II_e" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="II_e" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -252,7 +252,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="II_f" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="II_f" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -279,7 +279,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="III_a" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="III_a" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -292,7 +292,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="III_b" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="III_b" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -305,7 +305,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="III_c" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="III_c" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -318,7 +318,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="III_d" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="III_d" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -331,7 +331,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="III_e" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="III_e" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -358,7 +358,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="IV_a" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="IV_a" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -371,7 +371,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="IV_b" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="IV_b" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -384,7 +384,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="IV_c" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="IV_c" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -397,7 +397,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="IV_d" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="IV_d" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -410,7 +410,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="IV_e" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="IV_e" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -423,7 +423,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="IV_f" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="IV_f" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -450,7 +450,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="V_a" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="V_a" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -463,7 +463,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="V_b" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="V_b" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -476,7 +476,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="V_c" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="V_c" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -489,7 +489,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="V_d" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="V_d" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -502,7 +502,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="V_e" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="V_e" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -529,7 +529,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="VI_a" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="VI_a" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -542,7 +542,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="VI_b" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="VI_b" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -555,7 +555,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="VI_c" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="VI_c" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -568,7 +568,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="VI_d" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="VI_d" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -595,7 +595,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="VII_a" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="VII_a" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -608,7 +608,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="VII_b" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="VII_b" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -621,7 +621,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="VII_c" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="VII_c" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -634,7 +634,7 @@
                 <div class="col-lg-4 py-2 tabla d-flex justify-content-around align-items-center">
                     @for (int i = 0; i <= 5; i++) {
                         <div class="form-check form-check-inline rdbLetras">
-                            <input asp-for="VII_d" value="@i" type="radio" class="form-check-input rdb">
+                            <input asp-for="VII_d" value="@i" type="radio" required class="form-check-input rdb">
                             <label class="form-check-label">@i</label>
                         </div>
                     }
@@ -643,7 +643,7 @@
             <div class="row">
                 <div class="col-lg py-2 tabla">
                     <h5 style="text-align: center;">Observaciones Generales</h5>
-                    <textarea asp-for="DG" class="form-control" placeholder="Escribe aquí (Opcional)" rows="10"></textarea>
+                    <textarea asp-for="DG" class="form-control" required placeholder="Escribe aquí (Opcional)" rows="10"></textarea>
                 </div>
             </div>
             <div class="row">
